@@ -13,18 +13,11 @@ app.controller('mainController', function($scope, $http) {
 });
 
 app.controller('contentController', function($scope, $http, $location) {
-	console.log(window.location.href);
 	var string = window.location.href;
 	var array = string.split('/');
 	console.log(array[array.length-1]);
-	var data = {
-		"contentId": "Two-Sons-Of-A-Daily-Wage-Earner-Crack-IIT-Entrance-Under-500-Rank-1453010155307"
-	}
 
-	var baseUrl = "http://humannize.com:8080/humanize-1/content?urlId="
-	var url = "http://humannize.com:8080/humanize-1/content?urlId=" + array[array.length-1];
-
-
+	var url = "http://humannize.com:8080/humanize-1/api/content?urlId=" + array[array.length-1];
 
 	$http.get(url)
 		.success(function(data, status, headers, config) {
@@ -43,11 +36,4 @@ app.controller('contentController', function($scope, $http, $location) {
 		.error(function(data, status, headers, config) {
 			console.log("failure");
 		});
- 	/*$http.post('http://localhost:8080/content/', data)
-            .success(function (data, status, headers, config) {
-            	$scope.posts = data.contents;
-			console.log($scope.posts[0]);
-            })
-            .error(function (data, status, header, config) {
-            });*/
 });

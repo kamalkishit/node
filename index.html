@@ -3,24 +3,34 @@
 <head>
 	<title></title>
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<style>
 		html, body {
 			height:100%;
+			background-color: #00BFA5;
 			font-family: 'Roboto', sans-serif;
 		}
 
-		#def {
-			height:64%;
+		#bottom {
+			height:56%;
 			background-color: #00BFA5;
+
 		}
 
-		#abc {
-			height:28%;
+		#top {
+			height:30%;
+			background-color: #FFFFFF;
 		}
+
+		.text{
+			text-align: center;
+			width:auto;
+			padding-top: 3%;
+		}
+
 		nav.nav-bar{
 			height:60px;
 			background-color:#1FA080;
@@ -28,21 +38,52 @@
 			box-sizing:border-box;
 	  		display:block !important;
 	  		z-index:2;
+	  		text-align: center;
+	  		color:white;
+			font-size: 20px;
+		}
+
+		.play-store-img{
+			height:60px;
+			width:auto;
+			margin-top:15px;
+		}
+
+		div.phone{
+			height:84%;
+			width:auto;
+			display:inline;
+			position:absolute;
+			top:15%;
+			box-sizing:border-box;
+		}
+
+		@media only screen and (max-width: 600px){
+			.hide-on-sl {
+				display: none !important;
+			}
 		}
 	</style>
 
 </head>
 <body>
   	<nav class="nav-bar">
-		<ul>
-			<li class="logo offset-xs-15 offset-sl-17 offset-m-18 offset-lg-18 offset-xl-18">HUMANIZE</li>
-		</ul>
+		HUMANIZE
 	</nav>
 
-	<div id='abc'>
+	<div id='top' class='row'>
+		<div class="text offset-xl-9 col-xl-8 offset-lg-9 col-l-8 offset-m-6 col-m-10">
+			A platform to know<br>
+			what good is happening around us.<br>
+			<img src="http://humannize.com/static/playstore.png" class="play-store-img">
+		</div>
 	</div>
-<img src="static/phone.png" style="height:90%;display:inline;position:absolute;top:15%;right:15%;box-sizing:border-box">
-	<div id='def'>
+		
+	<div class="phone offset-xl-24 offset-lg-24 offset-m-24 offset-sl-20 hide-on-sl">
+		<img id="phone" src="phone.png" height="100%">
+	</div>
+		
+	<div id='bottom'>
 	</div>
 </body>
 </html>

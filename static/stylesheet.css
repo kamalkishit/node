@@ -508,7 +508,7 @@
 		div.article-card > figure > figcaption {
 			position: absolute;
 			bottom: -1%;
-			left:4%;
+			right:4%;
 	        display: inline;
 	   	    width:auto;
 			margin: 0;
@@ -556,7 +556,6 @@
 /*Nav*/
 nav.nav-bar{
 	width:100%;
-	margin-bottom:50px;
 	box-shadow: 0px 3px 3px #D3D3D3;
 	-moz-box-shadow: 0px 3px 3px #D3D3D3;
 	-webkit-box-shadow: 0px 3px 3px #D3D3D3;
@@ -585,18 +584,24 @@ nav.nav-bar > ul > .logo{
 /*Button*/
 .btn{
 	width:150px;
-	height:40px;
+	height:30px;
 	border:none;
 	border-radius:1px;
 	font-size:15px;
-	padding:10px;
+	padding-top:8px;
 	text-align: center;
 	display:block;
 	text-decoration: none;
 	color:black;
 	background-color:white;
 	box-shadow:1px 1px 5px #888;
-	outline:none;
+	box-sizing:border-box;
+}
+@keyframes rise{
+	100%{box-shadow:4px 4px 20px #888;}
+}
+.btn:hover{
+	animation:rise 1s forwards;
 }
 /*Side nav bar*/
 .side-nav{
@@ -606,27 +611,33 @@ nav.nav-bar > ul > .logo{
 		bottom:0;
 		width:300px;
 		background-color:white;
-		transform: translate3d(-300px,0,0);
+		transform: translate3d(-100%,0,0);
 		transition: transform 0.3s ease;
 		box-shadow: 0px 3px 4px #888;
 		-webkit-box-shadow: 0px 3px 4px #888;
 		-moz-box-shadow: 0px 3px 4px #888;
-		overflow-y:scroll;
 	}
 	.active-nav .side-nav{
 		transform: translate3d(0,0,0);
 	}
 	.side-nav ul{
 		list-style: none;
-		margin-top:100px;
+		margin-top:20px;
 	}
+
+	.side-nav ul li.heading{
+		padding:5px 0 5px 50px;
+		font-size: 20px;
+		color: #000000;
+		margin-bottom: 10px;
+	}
+	
 	.side-nav ul li a{
 		display:block;
 		text-decoration:none;
 		text-align:left;
-		padding:10px 0 10px 40px;
-		color:#fff;
-		color:#00BFA5;
+		padding:10px 0 10px 70px;
+		color:#000000;
 	}
 	.nav-toggle-btn{
 		display:inline-block;
@@ -635,19 +646,14 @@ nav.nav-bar > ul > .logo{
 		top:10px;
 		width:40px;
 		height:40px;
-		transform: translate3d(0,0,0);
-		transition: transform 0.3s ease;
-	}
-	.nav-toggle-btn-active{
-				transform: translate3d(300px,0,0);
-				transition: transform 0.3s ease;
 	}
 	@media only screen and (max-width:480px){
 		.side-nav{
-		width:260px;
+		width:280px;
 		background-color:white;
-		transform: translate3d(-260px,0,0);
+		transform: translate3d(-100%,0,0);
 		transition: transform 0.3s ease;
+		overflow-y:scroll;
 	}
 	.active-nav .side-nav{
 		transform: translate3d(0,0,0);
@@ -663,7 +669,7 @@ nav.nav-bar > ul > .logo{
 		transition: transform 0.3s ease;
 	}
 	.nav-toggle-btn-active{
-				transform: translate3d(260px,0,0);
+				transform: translate3d(280px,0,0);
 				transition: transform 0.3s ease;
 	}
 	}
