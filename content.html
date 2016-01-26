@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Main page</title>
-	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -156,10 +155,19 @@
 	<div class="row content" ng-controller='contentController'>
 		<div class="card article-card col-xs-38 col-sl-24 col-m-16 col-lg-14 col-xl-14 offset-sl-8 offset-m-12 offset-lg-12 offset-xl-10 offset-xs-1" ng-repeat='post in posts'>
 
-			<figure><img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}" alt="Awesome-dad-cover"><figcaption><a href="#">{{ post.category }}</a></figcaption></img>
+			<figure>
+				<a ng-href="{{ post.originalUrl }}" target="_blank">
+					<img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}" alt="Awesome-dad-cover">
+						
+					</img>
+				</a>
+				<figcaption>
+					<a href="#">{{ post.category }}</a>
+				</figcaption>
 			</figure>
+
 			<div class="title">
-				{{ post.title }}
+				<h3>{{ post.title }}</h3>
 			</div>
 			<div class="relate"><span style="margin-right:5px">{{ date }}</span><span class="source">{{ post.source }}</span></div>
 			<div class="description">
