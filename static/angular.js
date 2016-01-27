@@ -13,16 +13,19 @@ app.controller('mainController', function($scope, $http) {
 });
 
 app.controller('contentController', function($scope, $http, $location) {
+
+	$scope.getTitle = function () {
+		return "hi hello"
+	};
 	var string = window.location.href;
 	var array = string.split('/');
-	console.log(array[array.length-1]);
 
 	var url = "http://humannize.com:8080/humanize-1/api/content?urlId=" + array[array.length-1];
 
 	$http.get(url)
 		.success(function(data, status, headers, config) {
 			$scope.posts = data.contents;
-						var theDate = new Date($scope.posts[0].createdDate);
+			var theDate = new Date($scope.posts[0].createdDate);
 			var monthNames = [
   					"Jan", "Feb", "Mar",
 					"Apr", "May", "Jun", "Jul",

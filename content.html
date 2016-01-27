@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app="MyApp"  ng-controller='contentController'>
 <head>
 	<title>Main page</title>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -10,6 +10,11 @@
 	<script src="../static/jquery.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="../static/angular.js" type="text/javascript"></script>
+
+	<meta property="og:title" content="{{ getTitle() }}" />
+	<meta property="og:description" content="getTitle()" />
+	<meta property="og:image" content="{{ posts[0].imageId }}" />
+	<meta property="og:site_name" content="HUMANIZE" />
 	<style type="text/css">
 		div.row{
 			min-height:100%;
@@ -121,7 +126,7 @@
 	}
 	</style>
 </head>
-<body style="font-family:roboto;" ng-app="MyApp">
+<body style="font-family:roboto;">
 	<nav class="nav-bar">
 		<ul>
 			<li><a href="#"  class="nav-toggle-btn"><i class="fa fa-bars"></i></a></li>
@@ -152,7 +157,7 @@
 		</ul>
 	</nav>
 
-	<div class="row content" ng-controller='contentController'>
+	<div class="row content">
 		<div class="card article-card col-xs-38 col-sl-24 col-m-16 col-lg-14 col-xl-14 offset-sl-8 offset-m-12 offset-lg-12 offset-xl-10 offset-xs-1" ng-repeat='post in posts'>
 
 			<figure>
