@@ -12,7 +12,9 @@ app.controller('mainController', function($scope, $http) {
 		});
 });
 
-app.controller('contentController', function($scope, $http, $location) {
+app.controller('contentController', function($scope, $http, $location, OGTags) {
+
+	$scope.OGTags = OGTags;
 
 	$scope.getTitle = function () {
 		return "hi hello"
@@ -34,9 +36,37 @@ app.controller('contentController', function($scope, $http, $location) {
 				];
 
 			$scope.date = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
+			console.log($scope.posts[0]);
+
+			console.log($scope.posts[0].title);
+			OGTags.setTitle($scope.posts[0].title);
+			OGTags.setDescription($scope.posts[0].description);
+			OGTags.setImageUrl("http://humannize.com:8080/humanize-1/images/" + $scope.posts[0].imageId);
+			OGTags.setUrl($scope.posts[0].url);
 		})
 
 		.error(function(data, status, headers, config) {
 			console.log("failure");
 		});
+});
+
+app.factory('OGTags', function() {
+	var title = 'default';
+	var description = 'description';
+	var imageUrl = 'imageUrl';
+	var site_name = 'Humanize';
+	var url = 'url';
+
+	return {
+		getTitle: function() { return title; },
+		setTitle: function(newTitle) { title = newTitle; },
+		getDescription: function() { return description; },
+		setDescription: function(newDescription) { description = newDescription; },
+		getImageUrl: function() { return imageUrl; },
+		setImageUrl: function(newImageUrl) { imageUrl = newImageUrl; },
+		getSiteName: function() { return site_name; },
+		setSiteName: function(newSiteName) { site_name = newSiteName; },
+		getUrl: function() { return url; },
+		setUrl: function(newUrl) { url = newUrl; }
+	};
 });

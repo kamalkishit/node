@@ -11,10 +11,12 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="../static/angular.js" type="text/javascript"></script>
 
-	<meta property="og:title" content="{{ getTitle() }}" />
-	<meta property="og:description" content="getTitle()" />
-	<meta property="og:image" content="{{ posts[0].imageId }}" />
+	<meta property="og:title" content="{{ OGTags.getTitle() }}" />
+	<meta property="og:description" content="{{ OGTags.getDescription() }}" />
+	<meta property="og:image" content="{{ OGTags.getImageUrl() }}" />
+	<meta property="og:url" content="{{ OGTags.getUrl() }}" />
 	<meta property="og:site_name" content="HUMANIZE" />
+	 <title>{{ Page.getTitle() }}</title>
 	<style type="text/css">
 		div.row{
 			min-height:100%;
