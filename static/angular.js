@@ -4,11 +4,9 @@ app.controller('mainController', function($scope, $http) {
 	$http.get('http://humannize.com:8080/humanize-1/api/content/')
 		.success(function(data, status, headers, config) {
 			$scope.posts = data.contents;
-			console.log($scope.posts[0]);
 		})
 
 		.error(function(data, status, headers, config) {
-			console.log("failure");
 		});
 });
 
@@ -16,9 +14,6 @@ app.controller('contentController', function($scope, $http, $location, OGTags) {
 
 	$scope.OGTags = OGTags;
 
-	$scope.getTitle = function () {
-		return "hi hello"
-	};
 	var string = window.location.href;
 	var array = string.split('/');
 
@@ -36,9 +31,7 @@ app.controller('contentController', function($scope, $http, $location, OGTags) {
 				];
 
 			$scope.date = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
-			console.log($scope.posts[0]);
 
-			console.log($scope.posts[0].title);
 			OGTags.setTitle($scope.posts[0].title);
 			OGTags.setDescription($scope.posts[0].description);
 			OGTags.setImageUrl("http://humannize.com:8080/humanize-1/images/" + $scope.posts[0].imageId);
@@ -46,7 +39,6 @@ app.controller('contentController', function($scope, $http, $location, OGTags) {
 		})
 
 		.error(function(data, status, headers, config) {
-			console.log("failure");
 		});
 });
 
