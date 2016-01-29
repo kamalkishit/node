@@ -1,0 +1,54 @@
+sudo apt-get update
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+echo "JAVA_HOME="/usr/lib/jvm/java-8-oracle"" > /etc/environment
+source /etc/environment
+
+sudo apt-get update
+sudo apt-get install git
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+
+sudo apt-get update
+sudo apt-get install maven
+
+sudo groupadd tomcat
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+cd ~
+wget http://mirror.sdunix.com/apache/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz
+sudo mkdir /opt/tomcat
+sudo tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
+
+cd /opt/tomcat
+sudo chgrp -R tomcat conf
+sudo chmod g+rwx conf
+sudo chmod g+r conf/*
+sudo chown -R tomcat work/ temp/ logs/
+
+sudo chgrp -R tomcat webapps
+sudo chmod g+rwx webapps
+sudo chmod g+r webapps/*
+
+
+touch /etc/init/tomcat.conf
+
+sudo apt-get update
+sudo wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
+sudo wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
+sudo apt-get update && apt-get install s3cmd
+sudo s3cmd --configure
+
+apt-get install haveged
+
+mkdir /root/temp
+mkdir /root/images
+
+sudo apt-get install inotify-tools
+
+
