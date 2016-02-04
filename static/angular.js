@@ -1,4 +1,13 @@
-var app = angular.module('MyApp', ['angular-seo']);
+var app = angular.module('MyApp', []);
+
+app.config(function($locationProvider) {
+	$locationProvider.html5Mode({
+		enabled: true,
+  		requireBase: false
+	});
+
+	$locationProvider.hashPrefix('!');
+});
 
 app.controller('mainController', function($scope, $http) {
 	$http.get('http://humannize.com:8080/humanize-1/api/content/')
@@ -36,7 +45,7 @@ app.controller('contentController', function($scope, $http, $location, OGTags) {
 			OGTags.setDescription($scope.posts[0].description);
 			OGTags.setImageUrl("http://humannize.com:8080/humanize-1/images/" + $scope.posts[0].imageId);
 			OGTags.setUrl($scope.posts[0].url);
-			$scope.htmlReady();
+			//$scope.htmlReady();
 		})
 
 		.error(function(data, status, headers, config) {
