@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "express": "latest",
-    "prerender-node": "latest"
+    "request": "latest",
+    "jade": "latest"
   }
 }

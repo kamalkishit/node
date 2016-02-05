@@ -52,6 +52,41 @@ app.controller('contentController', function($scope, $http, $location, OGTags) {
 		});
 });
 
+app.controller('homeController', function($scope, $http, $location, OGTags) {
+
+	$scope.OGTags = OGTags;
+
+
+	var url = "http://localhost:8080/api/content/find";
+
+	var contentSearchParams = {
+		categories: ["Achievers", "Beautiful"]
+	};
+
+	$http.post(url, contentSearchParams)
+		.success(function(data, status, headers, config) {
+			$scope.posts = data.contents;
+			var theDate = new Date($scope.posts[0].createdDate);
+			var monthNames = [
+  					"Jan", "Feb", "Mar",
+					"Apr", "May", "Jun", "Jul",
+					"Aug", "Sep", "Oct",
+					"Nov", "Dec"
+				];
+
+			$scope.date = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
+
+			OGTags.setTitle($scope.posts[0].title);
+			OGTags.setDescription($scope.posts[0].description);
+			OGTags.setImageUrl("http://humannize.com:8080/humanize-1/images/" + $scope.posts[0].imageId);
+			OGTags.setUrl($scope.posts[0].url);
+			//$scope.htmlReady();
+		})
+
+		.error(function(data, status, headers, config) {
+		});
+});
+
 app.factory('OGTags', function() {
 	var title = 'default';
 	var description = 'description';

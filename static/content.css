@@ -1,0 +1,108 @@
+div.row{
+			min-height:100%;
+			margin-top: 50px;
+			padding-top:50px;
+			overflow-y:hidden;
+			box-sizing:border-box;
+		}
+
+		div.row:after{
+			display:block;
+		}
+
+		nav.nav-bar{
+			height:60px;
+			background-color:#1FA080;
+			padding:16px 10px;
+			box-sizing:border-box;
+	  		display:block !important;
+	  		position:fixed;
+	  		top:0;
+	  		left:0;
+	  		z-index:2;
+		}
+
+		.download-bar{
+			height:50px;
+			padding:10%;
+			display:block;
+			color:white;
+		}
+
+		.download-bar .play-store-img{
+			float:right;height:40px;width:150px;margin-top:5px;
+		}
+
+		.download-bar .header{
+			margin:15px 0px 0px 0px;
+			display:inline-block;
+		}
+
+		div.card-main{
+			height:auto;
+			padding-bottom:0;
+			box-sizing: border-box;
+			position: relative;
+		}
+
+		.category{
+			position:relative;
+			left:79%;
+			bottom:10%;
+			display:inline-block;
+		}
+
+		.relate{
+			padding:2% 4% 2% 4%;
+			margin-bottom:5px;
+		}
+
+		.relate > .date{
+			border-bottom: 2px solid;
+		}
+
+		.relate > .source{
+			float:right;
+		}
+
+		div.categories-nav{
+			position:fixed;
+			top:15%;
+			left:6%;
+			width:16%;
+		}
+
+		.categories-nav .header{
+			font-size:20px;
+			padding:6% 10% 2% 10%;
+			color:white;
+			background:#00BFA5;
+			height:48px;
+			box-sizing:border-box;
+		}
+
+		.categories-nav ul li{
+			padding:2% 10% 0 15%;
+			height:30px !important;
+		}
+
+		.categories-nav ul li a{
+			text-decoration: none;
+		}
+		.categories-nav ul li:hover{
+			background:#F1EEEE;
+		}
+
+		@media only screen and (max-width: 992px){
+		.show-m-and-down{
+			display: block !important;
+		}
+	}
+		@media only screen and (max-width:480px){
+			div.card{
+				margin-bottom: 5%;
+			}
+			div.row{
+				top:12%;
+			}
+	}

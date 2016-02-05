@@ -507,7 +507,7 @@
 
 		div.article-card > figure > figcaption {
 			position: absolute;
-			bottom: -1%;
+			bottom: -.05%;
 			right:4%;
 	        display: inline;
 	   	    width:auto;

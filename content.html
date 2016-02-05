@@ -1,139 +1,26 @@
 <!DOCTYPE html>
-<html  ng-app="MyApp"  ng-controller='contentController'>
+<html>
 <head>
 	<title>Main page</title>
-	<meta name="fragment" content="!">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" type="text/css" href="../static/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="../static/content.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<script src="../static/jquery.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="../static/angular.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<meta name="fragment" content="!" />
-	<meta property="og:title" content="{{ OGTags.getTitle() }}" />
-	<meta property="og:description" content="{{ OGTags.getDescription() }}" />
-	<meta property="og:image" content="{{ OGTags.getImageUrl() }}" />
-	<meta property="og:url" content="{{ OGTags.getUrl() }}" />
+	<meta property="og:title" content="#{title}" />
+	<meta property="og:description" content="#{description}" />
+	<meta property="og:image" content="#{image}" />
+	<meta property="og:url" content="" />
 	<meta property="og:site_name" content="HUMANIZE" />
-	<style type="text/css">
-		div.row{
-			min-height:100%;
-			margin-top: 50px;
-			padding-top:50px;
-			overflow-y:hidden;
-			box-sizing:border-box;
-		}
-
-		div.row:after{
-			display:block;
-		}
-
-		nav.nav-bar{
-			height:60px;
-			background-color:#1FA080;
-			padding:16px 10px;
-			box-sizing:border-box;
-	  		display:block !important;
-	  		position:fixed;
-	  		top:0;
-	  		left:0;
-	  		z-index:2;
-		}
-
-		.download-bar{
-			height:50px;
-			padding:10%;
-			display:block;
-			color:white;
-		}
-
-		.download-bar .play-store-img{
-			float:right;height:40px;width:150px;margin-top:5px;
-		}
-
-		.download-bar .header{
-			margin:15px 0px 0px 0px;
-			display:inline-block;
-		}
-
-		div.card-main{
-			height:auto;
-			padding-bottom:0;
-			box-sizing: border-box;
-			position: relative;
-		}
-
-		.category{
-			position:relative;
-			left:79%;
-			bottom:10%;
-			display:inline-block;
-		}
-
-		.relate{
-			padding:2% 4% 2% 4%;
-			margin-bottom:5px;
-		}
-
-		.relate > .date{
-			border-bottom: 2px solid;
-		}
-
-		.relate > .source{
-			float:right;
-		}
-
-		div.categories-nav{
-			position:fixed;
-			top:15%;
-			left:6%;
-			width:16%;
-		}
-
-		.categories-nav .header{
-			font-size:20px;
-			padding:6% 10% 2% 10%;
-			color:white;
-			background:#00BFA5;
-			height:48px;
-			box-sizing:border-box;
-		}
-
-		.categories-nav ul li{
-			padding:2% 10% 0 15%;
-			height:30px !important;
-		}
-
-		.categories-nav ul li a{
-			text-decoration: none;
-		}
-		.categories-nav ul li:hover{
-			background:#F1EEEE;
-		}
-
-		@media only screen and (max-width: 992px){
-		.show-m-and-down{
-			display: block !important;
-		}
-	}
-		@media only screen and (max-width:480px){
-			div.card{
-				margin-bottom: 5%;
-			}
-			div.row{
-				top:12%;
-			}
-	}
-	</style>
 </head>
-<body style="font-family:roboto;">
+<body>
+	<div ng-app='MyApp' ng-controller='contentController'>
 	<nav class="nav-bar">
 		<ul>
 			<li><a href="#"  class="nav-toggle-btn"><i class="fa fa-bars"></i></a></li>
-			<li class="logo offset-xs-10 offset-sl-13 offset-m-15 offset-lg-15 offset-xl-14">HUMANIZE</li>
+			<li class="logo offset-xs-18 offset-sl-18 offset-m-18 offset-lg-18 offset-xl-18">HUMANIZE</li>
 		</ul>
 	</nav>
 
@@ -143,8 +30,8 @@
 			<li class="heading">Categories</li>
 			<li><a href="#">All Categories</a></li>
 			<li><a href="#">Achievers</a></li>
-			<li><a href="#">Changemakers</a></li>
 			<li><a href="#">Beautiful</a></li>
+			<li><a href="#">Changemakers</a></li>
 			<li><a href="#">Education</a></li>
 			<li><a href="#">Empowerment</a></li>
 			<li><a href="#">Environment</a></li>
@@ -152,7 +39,6 @@
 			<li><a href="#">Health</a></li>
 			<li><a href="#">Humanity</a></li>
 			<li><a href="#">Inspiring</a></li>
-			<li><a href="#">Kindness</a></li>
 			<li><a href="#">Law and Justice</a></li>
 			<li><a href="#">Real Heroes</a></li>
 			<li><a href="#">Science and Tech</a></li>
@@ -161,7 +47,7 @@
 	</nav>
 
 	<div class="row content">
-		<div class="card article-card col-xs-38 col-sl-24 col-m-16 col-lg-14 col-xl-14 offset-sl-8 offset-m-12 offset-lg-12 offset-xl-10 offset-xs-1" ng-repeat='post in posts'>
+		<div class="card article-card col-xs-38 col-sl-26 col-m-20 col-lg-16 col-xl-16 offset-sl-7 offset-m-10 offset-lg-12 offset-xl-12 offset-xs-1" ng-repeat='post in posts'>
 
 			<figure>
 				<a ng-href="{{ post.originalUrl }}" target="_blank">
@@ -182,6 +68,13 @@
 				{{ post.description }}
 			</div>
 		</div>
+	</div>
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
+	<script src="../static/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="../static/angular.js" type="text/javascript"></script>
 	</div>
 </body>
 </html>
