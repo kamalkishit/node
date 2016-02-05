@@ -20,11 +20,7 @@ app.get('/content/:urlId', function(req, res){
 	request(uri, function (error, response, body) {
   if (!error && response.statusCode == 200) {
   	var obj = JSON.parse(body);
-  	var contents = body;
-    console.log(body); // Show the HTML for the Google homepage. 
-    console.log("im here");
-    console.log(obj.contents[0].imageURL);
-    res.render('index', { title: obj.contents[0].title, description: obj.contents[0].description, image: obj.contents[0].imageURL });
+    res.render('index', { title: obj.contents[0].title, description: obj.contents[0].description, image: obj.contents[0].imageURL, url: obj.contents[0].url });
   }
 })
 });
