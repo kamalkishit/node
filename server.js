@@ -12,9 +12,6 @@ app.set('views', __dirname);
 
 app.get('/content/:urlId', function(req, res){
 
-	//console.log(id);
-	console.log(req.params.urlId);
-
 	var uri = 'http://humannize.com:8080/humanize-1/api/content?urlId=' + req.params.urlId;
 
 	request(uri, function (error, response, body) {
