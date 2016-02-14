@@ -5,7 +5,7 @@
 			$('body').addClass('active-nav');
 			$('.nav-toggle-btn').addClass('nav-toggle-btn-active');
 		});
-		$('.row,.card').on('click',function(){
+		$('.row,.card,nav.side-nav ul li a').on('click',function(){
 			$('body').removeClass('active-nav');
 			$('.nav-toggle-btn').removeClass('nav-toggle-btn-active');
 		});

@@ -23,14 +23,14 @@ div.row{
 		}
 
 		.download-bar{
-			height:50px;
+			height:60px;
 			padding:10%;
 			display:block;
 			color:white;
 		}
 
 		.download-bar .play-store-img{
-			float:right;height:40px;width:150px;margin-top:5px;
+			float:right;height:54px;width:auto;margin-top:3px;
 		}
 
 		.download-bar .header{

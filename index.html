@@ -5,18 +5,20 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="static/responsive.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<style>
 		html, body {
-			height:100%;
+			height:auto;
 			background-color: #00BFA5;
 			font-family: 'Roboto', sans-serif;
 		}
 
 		#top {
-			height:200px;
+			height:250px;
 			background-color: #FFFFFF;
+			padding-top:50px;
 		}
 
 		.text{
@@ -25,45 +27,66 @@
 			padding-top: 50px;
 		}
 
-		nav.nav-bar{
-			height:60px;
-			background-color:#1FA080;
-			padding:16px 10px;
-			box-sizing:border-box;
-	  		display:block !important;
-	  		z-index:2;
+		div.nav-bar{
+			height: 60px;
+			background-color: #1FA080;
+			padding: 16px 20px;
+			box-sizing: border-box;
+	  		display: block !important;
+	  		z-index: 2;
+	  		position: fixed;
 	  		text-align: center;
-	  		color:white;
-			font-size: 20px;
 		}
 
 		.play-store-img{
-			height:65px;
-			width:auto;
-			margin-top:15px;
+			height: 65px;
+			width: auto;
+			margin-top: 15px;
 		}
 
 		div.phone{
-			height:84%;
-			width:auto;
-			display:inline;
-			position:absolute;
-			top:15%;
-			box-sizing:border-box;
+			height: 84%;
+			width: auto;
+			display: inline;
+			position: absolute;
+			top: 15%;
+			box-sizing: border-box;
 		}
-
-		@media only screen and (max-width: 600px){
-			.hide-on-sl {
-				display: none !important;
+		div.phone-sl{
+			display: none;
+			position: absolute;
+			top:220px;
+			width: 100%;
+		}
+		div.phone-sl img{
+			width: 80%;
+			margin: 0px 10%;
+		}
+		@media only screen and (max-width: 768px){
+			div.phone {
+				top: 200px;
+				height:100%;
+				width:100% !important;
+				margin:0 auto;
+				display:block;
+			}
+			div.phone img{
+				margin:auto;
+			}
+			#top {
+			height:210px !important;
+			padding-top:35px !important;
 			}
 		}
 	</style>
 
 </head>
 <body>
-  	<nav class="nav-bar">
-		HUMANIZE
-	</nav>
+  	<div class="nav-bar">
+		<ul>
+			<li class="logo">HUMANIZE</li>
+		</ul>
+	</div>
 
 	<div id='top' class='row'>
 		<div class="text offset-xl-9 col-xl-8 offset-lg-9 col-l-8 offset-m-6 col-m-10">
@@ -72,8 +95,11 @@
 		</div>
 	</div>
 		
-	<div class="phone offset-xl-24 offset-lg-24 offset-m-24 offset-sl-20 hide-on-sl">
-		<img id="phone" src="static/phone.png" height="100%">
+	<div class="phone offset-xl-24 offset-lg-24 offset-m-24 hide-m-and-sl">
+		<img id="phone" src="static/phone.png" height="100%" align="middle">
+	</div>
+	<div class="phone-sl show-m-and-sl">
+		<img src="static/phone_sl.png">
 	</div>
 </body>
 </html>
