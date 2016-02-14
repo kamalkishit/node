@@ -52,10 +52,14 @@ app.controller('trendsController', function($scope, $http) {
 
 app.controller('homeController', function($scope, $http, $location) {
 
+	$scope.loadMore = function() {
+	};
+
 	var url = "/api/content/find";
 
 	var contentSearchParams = {
-		categories: ["Achievers", "Beautiful", "Humanity", "Real Heroes", "Education"]
+		categories: ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
+			"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"]
 	};
 
 	$http({
@@ -83,7 +87,8 @@ app.controller('homeController', function($scope, $http, $location) {
 
 			$scope.posts = contents;
  	 	}, function errorCallback(response) {
- 	 		console.log('error');
   		});
+
+
 
 });

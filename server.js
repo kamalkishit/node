@@ -47,8 +47,6 @@ app.get('/api/content/trends', function(req, res) {
 
 app.post('/api/content/find', function(req, res) {
 
-		console.log(req.body.categories);
-
 	var uri = "http://humannize.com:8080/humanize-1/api/content/find";
 
 	var params = {
@@ -70,15 +68,11 @@ app.get('/api/content', function(req, res) {
 
 	var uri = 'http://humannize.com:8080/humanize-1/api/content?urlId=' + req.query.urlId;
 
-	console.log(req.query.urlId);
-
 	request(uri, function (error, response, body) {
   		if (!error && response.statusCode == 200) {
   			var obj = JSON.parse(body);
     		res.json(obj);
   		} else {
-  			console.log(error);
-  			console.log('error');
   		}
 	});
 });
