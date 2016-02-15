@@ -5,6 +5,9 @@
   "dependencies": {
     "express": "latest",
     "request": "latest",
-    "jade": "latest"
+    "jade": "latest",
+    "request": "latest",
+    "body-parser": "latest",
+    "node-rest-client": "latest"
   }
 }

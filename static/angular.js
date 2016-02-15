@@ -52,17 +52,42 @@ app.controller('trendsController', function($scope, $http) {
 
 app.controller('homeController', function($scope, $http, $location) {
 
-	$scope.loadMore = function() {
+	$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
+			"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
+
+	$scope.loadMore = function(createdDate) {
+		getMoreContent(createdDate, $scope.categories);
 	};
 
 	var url = "/api/content/find";
 
 	var contentSearchParams = {
-		categories: ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
-			"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"]
+		categories: $scope.categories
 	};
 
-	$http({
+	$scope.getContentByCategory = function(categories) {
+		var contentSearchParams = {
+			categories: categories
+		}
+
+		get(contentSearchParams);
+	}
+
+	getMoreContent = function(createdDate, categories) {
+		var contentSearchParams = {
+			categories: categories,
+			createdDate: createdDate
+		}
+
+		get(contentSearchParams);
+	}
+
+	getContent = function(contentSearchParams) {
+		get(contentSearchParams);
+	}
+
+	getMore = function(contentSearchParams) {
+		$http({
   		method: 'POST',
   		url: url,
   		data: contentSearchParams,
@@ -71,6 +96,8 @@ app.controller('homeController', function($scope, $http, $location) {
 		}})
 		.then(function successCallback(data, status, headers, config) {
 			var contents = data.data.contents;
+
+			$scope.createdDate = contents[contents.length-1].createdDate;
 
 			for (var i = 0; i < contents.length; i++) {
 				var theDate = new Date(contents[i].createdDate);
@@ -88,7 +115,38 @@ app.controller('homeController', function($scope, $http, $location) {
 			$scope.posts = contents;
  	 	}, function errorCallback(response) {
   		});
+	}
+
+	get = function(contentSearchParams) {
+		$http({
+  		method: 'POST',
+  		url: url,
+  		data: contentSearchParams,
+        headers: {
+            'Content-Type': 'application/json'
+		}})
+		.then(function successCallback(data, status, headers, config) {
+			var contents = data.data.contents;
+
+			$scope.createdDate = contents[contents.length-1].createdDate;
+
+			for (var i = 0; i < contents.length; i++) {
+				var theDate = new Date(contents[i].createdDate);
+				var monthNames = [
+	  					"Jan", "Feb", "Mar",
+						"Apr", "May", "Jun", "Jul",
+						"Aug", "Sep", "Oct",
+						"Nov", "Dec"
+					];
+
+				contents[i].createdDate = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
+			}
 
 
+			$scope.posts = contents;
+ 	 	}, function errorCallback(response) {
+  		});
+	}
 
+	getContent(contentSearchParams);
 });
