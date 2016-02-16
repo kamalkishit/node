@@ -62,9 +62,9 @@
 			Trending
 		</div>
 		<div class="trending-card card" ng-repeat='trend in trends'>
-			<a ng-href="{{ trend.originalUrl }}" target="_blank">
+			<a ng-href="{{ trend.url }}" target="_blank">
 				<img ng-src="http://humannize.com:8080/humanize-1/images/{{trend.imageId}}">
-				<span>{{ trend.title }}</span>
+				<span style="font-size: 12px">{{ trend.title }}</span>
 			</a>
 		</div>
 	</div>

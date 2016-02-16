@@ -56,7 +56,7 @@ app.controller('homeController', function($scope, $http, $location) {
 			"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
 
 	$scope.loadMore = function(createdDate) {
-		getMoreContent(createdDate, $scope.categories);
+		getMoreContent();
 	};
 
 	var url = "/api/content/find";
@@ -66,20 +66,54 @@ app.controller('homeController', function($scope, $http, $location) {
 	};
 
 	$scope.getContentByCategory = function(categories) {
+		
+		if (categories == "Achievers") {
+			$scope.categories = ["Achievers"];
+		} else if (categories == "Beautiful") {
+			$scope.categories = ["Beautiful"];
+		} else if (categories == "Changemakers") {
+			$scope.categories = ["Changemakers"];
+		} else if (categories == "Education") {
+			$scope.categories = ["Education"];
+		} else if (categories == "Empowerment") {
+			$scope.categories = ["Empowerment"];
+		} else if (categories == "Environment") {
+			$scope.categories = ["Environment"];
+		} else if (categories == "Governance") {
+			$scope.categories = ["Governance"];
+		} else if (categories == "Health") {
+			$scope.categories = ["Health"];
+		} else if (categories == "Humanity") {
+			$scope.categories = ["Humanity"];
+		} else if (categories == "Inspiring") {
+			$scope.categories = ["Inspiring"];
+		} else if (categories == "Law and Justice") {
+			$scope.categories = ["Law and Justice"];
+		} else if (categories == "Real Heroes") {
+			$scope.categories = ["Real Heroes"];
+		} else if (categories == "Science and Tech") {
+			$scope.categories = ["Science and Tech"];
+		} else if (categories == "Sports") {
+			$scope.categories = ["Sports"];
+		} else {
+			$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
+					"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
+		}
+
 		var contentSearchParams = {
-			categories: categories
+			categories: $scope.categories
 		}
 
 		get(contentSearchParams);
 	}
 
-	getMoreContent = function(createdDate, categories) {
+	getMoreContent = function() {
 		var contentSearchParams = {
-			categories: categories,
-			createdDate: createdDate
+			categories: $scope.categories,
+			createdDate: $scope.createdDate
 		}
 
-		get(contentSearchParams);
+		getMore(contentSearchParams);
 	}
 
 	getContent = function(contentSearchParams) {
@@ -111,8 +145,7 @@ app.controller('homeController', function($scope, $http, $location) {
 				contents[i].createdDate = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
 			}
 
-
-			$scope.posts = contents;
+			$scope.posts = $scope.posts.concat(contents);
  	 	}, function errorCallback(response) {
   		});
 	}
@@ -141,7 +174,6 @@ app.controller('homeController', function($scope, $http, $location) {
 
 				contents[i].createdDate = monthNames[theDate.getMonth()] + ' ' + theDate.getDate() + ' ' +  theDate.getFullYear();
 			}
-
 
 			$scope.posts = contents;
  	 	}, function errorCallback(response) {

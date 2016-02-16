@@ -49,13 +49,15 @@ app.post('/api/content/find', function(req, res) {
 
 	var uri = "http://humannize.com:8080/humanize-1/api/content/find";
 
-	var params = {
-		"categories": ["Achievers"]
-	}
 
 	var args = {
-		data: { categories: req.body.categories },
-		headers: { "Content-Type": "application/json" }
+		data: { 
+			categories: req.body.categories,
+			createdDate: req.body.createdDate
+		},
+		headers: { 
+			"Content-Type": "application/json" 
+		}
 	};
 
 	client.post("http://humannize.com:8080/humanize-1/api/content/find", args, function (data, response) {
