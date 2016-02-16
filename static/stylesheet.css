@@ -38,6 +38,7 @@ div.row: after {
 	height: 60px;
 	display: block;
 	color: white;
+	background-color: #FFFFFF;
 }
 
 .download-bar .play-store-img {
@@ -57,6 +58,7 @@ div.card-main {
 	padding-bottom: 0;
 	box-sizing: border-box;
 	position: relative;
+	background-color: #FFFFFF;
 }
 
 .category {
@@ -105,7 +107,7 @@ div.card-main {
 }
 
 .profile-image {
-	width: 20%;
+	width: 15%;
 }
 
 .trending-card {
@@ -201,6 +203,7 @@ div.card {
 	-moz-box-shadow: 1px 1px 1px #888;
 	-webkit-box-shadow: 1px 1px 1px #888;
 	display: block;
+	background-color: #FFFFFF;
 	padding: 0;
 	margin-bottom: 30px;
 	word-wrap: break-word;
@@ -390,6 +393,26 @@ div.nav-bar > ul > .logo {
 	text-decoration: none;
 	text-align: left;
 	padding: 10px 0 10px 70px;
+	color: #000000;
+}
+
+.card ul {
+	list-style: none;
+	margin-top: 15px;
+}
+
+.card ul li.heading {
+	padding: 3px 0 3px 50px;
+	font-size: 20px;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.card ul li a {
+	display: block;
+	text-decoration: none;
+	text-align: left;
+	padding: 5px 0 5px 70px;
 	color: #000000;
 }
 
