@@ -3,6 +3,9 @@ var app = module.exports = express();
 var request = require('request');
 var path = require('path');
 var Client = require('node-rest-client').Client;
+var favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/static/favicon.ico'));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());

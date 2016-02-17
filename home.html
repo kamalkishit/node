@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Main page</title>
+	<title>HUMANIZE</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
@@ -19,7 +19,7 @@
 	<nav class="side-nav">
 		<ul>
 			<li class="heading">Categories</li>
-			<li id="all-categories"><a ng-click='getContentByCategory("all")'>All Categories</a></li>
+			<li id="all-categories"><a  href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
 			<li id="achievers"><a ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
 			<li id="beautiful"><a ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
 			<li id="changemakers"><a ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
@@ -45,31 +45,32 @@
 		<div class='card'>
 		<ul>
 			<li class="heading">Categories</li>
-			<li id="all-categories"><a href="#1" ng-click='getContentByCategory("all")'>All Categories</a></li>
-			<li id="achievers"><a href="#2" ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
-			<li id="beautiful"><a href="#4" ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
-			<li id="changemakers"><a href="#3" ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
-			<li id="education"><a href="#5" ng-click='getContentByCategory("Education")'>Education</a></li>
-			<li id="empowerment"><a href="#6" ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
-			<li id="environment"><a href="#7" ng-click='getContentByCategory("Environment")'>Environment</a></li>
-			<li id="governance"><a href="#8" ng-click='getContentByCategory("Governance")'>Governance</a></li>
-			<li id="health"><a href="#9" ng-click='getContentByCategory("Health")'>Health</a></li>
-			<li id="humanity"><a href="#10" ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
-			<li id="inspiring"><a href="#11" ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
-			<li id="law-and-justice"><a href="#13" ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
-			<li id="real-heroes"><a href="#14" ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
-			<li id="science-and-tech"><a href="#15" ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
-			<li id="sports"><a href="#16" ng-click='getContentByCategory("Sports")'>Sports</a></li>
+			<li id="all-categories"><a href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
+			<li id="achievers"><a href='#' ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
+			<li id="beautiful"><a href='#' ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
+			<li id="changemakers"><a href='#' ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
+			<li id="education"><a href='#' ng-click='getContentByCategory("Education")'>Education</a></li>
+			<li id="empowerment"><a href='#' ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
+			<li id="environment"><a href='#' ng-click='getContentByCategory("Environment")'>Environment</a></li>
+			<li id="governance"><a href='#' ng-click='getContentByCategory("Governance")'>Governance</a></li>
+			<li id="health"><a href='#' ng-click='getContentByCategory("Health")'>Health</a></li>
+			<li id="humanity"><a href='#' ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
+			<li id="inspiring"><a href='#' ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
+			<li id="law-and-justice"><a href='#' ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
+			<li id="real-heroes"><a href='#' ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
+			<li id="science-and-tech"><a href='#' ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
+			<li id="sports"><a href='#' ng-click='getContentByCategory("Sports")'>Sports</a></li>
 		</ul>
 		</div>
 	</div>
 
 	<div class="row content">
 		<div class="card download-bar col-xs-38 col-sl-26 col-m-18 col-lg-16 col-xl-14 offset-sl-7 offset-m-11 offset-lg-12 offset-xl-11 offset-xs-1">
-			<div class="header" style='color: black;line-height: 60px'>Get HUMANIZE on</div>
-			<a href="https://play.google.com/store/apps/details?id=com.humanize.app&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1" target="_blank">
-				<img src="http://humannize.com/static/playstore.png" class="play-store-img">
-			</a>
+			<div id='inner'>
+				<a href="https://play.google.com/store/apps/details?id=com.humanize.app&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1" target="_blank">
+					<img src="http://humannize.com/static/playstore.png" class="play-store-img">
+				</a>
+			</div>
 		</div>
 		
 		<div class="card article-card col-xs-38 col-sl-26 col-m-18 col-lg-16 col-xl-14 offset-sl-7 offset-m-11 offset-lg-12 offset-xl-11 offset-xs-1" ng-repeat='post in posts'>

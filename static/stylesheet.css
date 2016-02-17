@@ -84,6 +84,11 @@ div.card-main {
 	background-color: #D3D3D3;
 }
 
+#inner {
+    width: 50%;
+    margin: 0 auto; 
+}
+
 .download-bar-sl {
 	width: 100% !important;
 	height: 60px !important;
@@ -179,7 +184,6 @@ footer {
 	}
 
 	.download-bar .play-store-img {
-		margin-right: 15px;
 	}
 }
 
@@ -188,7 +192,6 @@ footer {
 		margin-left: 10px;
 	}
 	.download-bar .play-store-img {
-		margin-right: 10px;
 	}
 }
 

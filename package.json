@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": "true",
   "dependencies": {
-    "express": "latest",
-    "request": "latest",
-    "jade": "latest",
-    "request": "latest",
     "body-parser": "latest",
-    "node-rest-client": "latest"
+    "express": "latest",
+    "jade": "latest",
+    "node-rest-client": "latest",
+    "request": "latest",
+    "serve-favicon": "latest"
   }
 }
