@@ -27,7 +27,7 @@ app.get('/content/:urlId', function(req, res){
 	request(uri, function (error, response, body) {
   		if (!error && response.statusCode == 200) {
   			var obj = JSON.parse(body);
-    		res.render('index', { title: obj.contents[0].title, description: obj.contents[0].description, image: obj.contents[0].imageURL, url: obj.contents[0].url });
+    		res.render('content', { title: obj.contents[0].title, description: obj.contents[0].description, image: obj.contents[0].imageURL, url: obj.contents[0].url });
   		}
 	});
 	//res.sendfile(path.join(__dirname + '/content.html'));
@@ -86,12 +86,8 @@ app.get('/', function(req, res) {
 	res.sendfile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/temp.html', function(req, res) {
-	res.sendfile(path.join(__dirname + '/temp.html'));
-});
-
-app.get('/home.html', function(req, res) {
-	res.sendfile(path.join(__dirname + '/home.html'));
+app.get('/about', function(req, res) {
+	res.sendfile(path.join(__dirname + '/about.html'));
 });
 
 app.listen(80);

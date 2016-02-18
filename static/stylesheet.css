@@ -36,21 +36,16 @@ div.row: after {
 
 .download-bar {
 	height: 60px;
-	display: block;
+	display: inline;
 	color: white;
 	background-color: #FFFFFF;
 }
 
 .download-bar .play-store-img {
-	float: right;
 	height: 60px;
 	width: auto;
-	margin-right: 50px;
-}
-
-.download-bar .header{
-	display: inline-block;
-	margin-left: 50px;
+	display: block;
+	margin: auto;
 }
 
 div.card-main {
@@ -84,10 +79,6 @@ div.card-main {
 	background-color: #D3D3D3;
 }
 
-#inner {
-    width: 50%;
-    margin: 0 auto; 
-}
 
 .download-bar-sl {
 	width: 100% !important;
@@ -98,14 +89,14 @@ div.card-main {
 }
 
 .trending-panel {
-	position: absolute;
+	position: fixed;
 	top: 100px;
 	left: 65%;
 	width: 27.5%;
 }
 
 .profile-panel {
-	position: absolute;
+	position: fixed;
 	top: 100px;
 	left: 7.5%;
 	width: 17.5%;
@@ -412,14 +403,14 @@ div.nav-bar > ul > .logo {
 	padding: 3px 0 3px 50px;
 	font-size: 20px;
 	color: #000000;
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 }
 
 .card ul li a {
 	display: block;
 	text-decoration: none;
 	text-align: left;
-	padding: 5px 0 5px 70px;
+	padding: 8px 0 8px 70px;
 	color: #000000;
 }
 
