@@ -19,21 +19,21 @@
 	<nav class="side-nav">
 		<ul>
 			<li class="heading">Categories</li>
-			<li id="all-categories"><a  href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
-			<li id="achievers"><a ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
-			<li id="beautiful"><a ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
-			<li id="changemakers"><a ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
-			<li id="education"><a ng-click='getContentByCategory("Education")'>Education</a></li>
-			<li id="empowerment"><a ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
-			<li id="environment"><a ng-click='getContentByCategory("Environment")'>Environment</a></li>
-			<li id="governance"><a ng-click='getContentByCategory("Governance")'>Governance</a></li>
-			<li id="health"><a ng-click='getContentByCategory("Health")'>Health</a></li>
-			<li id="humanity"><a ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
-			<li id="inspiring"><a ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
-			<li id="law-and-justice"><a ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
-			<li id="real-heroes"><a ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
-			<li id="science-and-tech"><a ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
-			<li id="sports"><a ng-click='getContentByCategory("Sports")'>Sports</a></li>
+			<li id="all-categories" ng-class="{ 'selected': all }"><a href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
+			<li id="achievers" ng-class="{ 'selected': achievers }"><a href='#' ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
+			<li id="beautiful" ng-class="{ 'selected': beautiful }"><a href='#' ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
+			<li id="changemakers" ng-class="{ 'selected': changemakers }"><a href='#' ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
+			<li id="education" ng-class="{ 'selected': education }"><a href='#' ng-click='getContentByCategory("Education")'>Education</a></li>
+			<li id="empowerment" ng-class="{ 'selected': empowerment }"><a href='#' ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
+			<li id="environment" ng-class="{ 'selected': environment }"><a href='#' ng-click='getContentByCategory("Environment")'>Environment</a></li>
+			<li id="governance" ng-class="{ 'selected': governance }"><a href='#' ng-click='getContentByCategory("Governance")'>Governance</a></li>
+			<li id="health" ng-class="{ 'selected': health }"><a href='#' ng-click='getContentByCategory("Health")'>Health</a></li>
+			<li id="humanity" ng-class="{ 'selected': humanity }"><a href='#' ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
+			<li id="inspiring" ng-class="{ 'selected': inspiring }"><a href='#' ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
+			<li id="law-and-justice" ng-class="{ 'selected': lawAndJustice }"><a href='#' ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
+			<li id="real-heroes" ng-class="{ 'selected': realHeroes }"><a href='#' ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
+			<li id="science-and-tech" ng-class="{ 'selected': scienceAndTech }"><a href='#' ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
+			<li id="sports" ng-class="{ 'selected': sports }"><a href='#' ng-click='getContentByCategory("Sports")'>Sports</a></li>
 		</ul>
 	</nav>
 
@@ -44,22 +44,22 @@
 
 		<div class='card'>
 		<ul>
-			<li class="heading">Categories</li>
-			<li id="all-categories"><a href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
-			<li id="achievers"><a href='#' ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
-			<li id="beautiful"><a href='#' ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
-			<li id="changemakers"><a href='#' ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
-			<li id="education"><a href='#' ng-click='getContentByCategory("Education")'>Education</a></li>
-			<li id="empowerment"><a href='#' ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
-			<li id="environment"><a href='#' ng-click='getContentByCategory("Environment")'>Environment</a></li>
-			<li id="governance"><a href='#' ng-click='getContentByCategory("Governance")'>Governance</a></li>
-			<li id="health"><a href='#' ng-click='getContentByCategory("Health")'>Health</a></li>
-			<li id="humanity"><a href='#' ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
-			<li id="inspiring"><a href='#' ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
-			<li id="law-and-justice"><a href='#' ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
-			<li id="real-heroes"><a href='#' ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
-			<li id="science-and-tech"><a href='#' ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
-			<li id="sports"><a href='#' ng-click='getContentByCategory("Sports")'>Sports</a></li>
+			<li class="heading ">Categories</li>
+			<li id="all-categories" ng-class="{ 'selected': all }"><a href='#' ng-click='getContentByCategory("all")'>All Categories</a></li>
+			<li id="achievers" ng-class="{ 'selected': achievers }"><a href='#' ng-click='getContentByCategory("Achievers")'>Achievers</a></li>
+			<li id="beautiful" ng-class="{ 'selected': beautiful }"><a href='#' ng-click='getContentByCategory("Beautiful")'>Beautiful</a></li>
+			<li id="changemakers" ng-class="{ 'selected': changemakers }"><a href='#' ng-click='getContentByCategory("Changemakers")'>Changemakers</a></li>
+			<li id="education" ng-class="{ 'selected': education }"><a href='#' ng-click='getContentByCategory("Education")'>Education</a></li>
+			<li id="empowerment" ng-class="{ 'selected': empowerment }"><a href='#' ng-click='getContentByCategory("Empowerment")'>Empowerment</a></li>
+			<li id="environment" ng-class="{ 'selected': environment }"><a href='#' ng-click='getContentByCategory("Environment")'>Environment</a></li>
+			<li id="governance" ng-class="{ 'selected': governance }"><a href='#' ng-click='getContentByCategory("Governance")'>Governance</a></li>
+			<li id="health" ng-class="{ 'selected': health }"><a href='#' ng-click='getContentByCategory("Health")'>Health</a></li>
+			<li id="humanity" ng-class="{ 'selected': humanity }"><a href='#' ng-click='getContentByCategory("Humanity")'>Humanity</a></li>
+			<li id="inspiring" ng-class="{ 'selected': inspiring }"><a href='#' ng-click='getContentByCategory("Inspiring")'>Inspiring</a></li>
+			<li id="law-and-justice" ng-class="{ 'selected': lawAndJustice }"><a href='#' ng-click='getContentByCategory("Law and Justice")'>Law and Justice</a></li>
+			<li id="real-heroes" ng-class="{ 'selected': realHeroes }"><a href='#' ng-click='getContentByCategory("Real Heroes")'>Real Heroes</a></li>
+			<li id="science-and-tech" ng-class="{ 'selected': scienceAndTech }"><a href='#' ng-click='getContentByCategory("Science and Tech")'>Science and Tech</a></li>
+			<li id="sports" ng-class="{ 'selected': sports }"><a href='#' ng-click='getContentByCategory("Sports")'>Sports</a></li>
 		</ul>
 		</div>
 	</div>

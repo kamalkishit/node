@@ -375,6 +375,10 @@ div.nav-bar > ul > .logo {
 	-moz-box-shadow: 0px 3px 4px #888;
 }
 
+.selected {
+	background-color: #BBB7B7;
+}
+
 .active-nav .side-nav {
 	transform: translate3d(0,0,0);
 }

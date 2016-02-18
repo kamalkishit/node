@@ -55,6 +55,22 @@ app.controller('homeController', function($scope, $http, $location) {
 	$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
 			"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
 
+	$scope.all = true;
+	$scope.achievers = false;
+	$scope.beautiful = false;
+	$scope.changemakers = false;
+	$scope.education = false;
+	$scope.empowerment = false;
+	$scope.environment = false;
+	$scope.governance = false;
+	$scope.health = false;
+	$scope.humanity = false;
+	$scope.inspiring = false;
+	$scope.lawAndJustice = false;
+	$scope.realHeroes = false;
+	$scope.scienceAndTech = false;
+	$scope.sports = false;		
+
 	$scope.loadMore = function(createdDate) {
 		getMoreContent();
 	};
@@ -65,39 +81,74 @@ app.controller('homeController', function($scope, $http, $location) {
 		categories: $scope.categories
 	};
 
+	resetSelection = function() {
+		$scope.all = false;
+		$scope.achievers = false;
+		$scope.beautiful = false;
+		$scope.changemakers = false;
+		$scope.education = false;
+		$scope.empowerment = false;
+		$scope.environment = false;
+		$scope.governance = false;
+		$scope.health = false;
+		$scope.humanity = false;
+		$scope.inspiring = false;
+		$scope.lawAndJustice = false;
+		$scope.realHeroes = false;
+		$scope.scienceAndTech = false;
+		$scope.sports = false;	
+	}
+
 	$scope.getContentByCategory = function(categories) {
+
+		resetSelection();
 		
 		if (categories == "Achievers") {
 			$scope.categories = ["Achievers"];
+			$scope.achievers = true;
 		} else if (categories == "Beautiful") {
 			$scope.categories = ["Beautiful"];
+			$scope.beautiful = true;
 		} else if (categories == "Changemakers") {
 			$scope.categories = ["Changemakers"];
+			$scope.changemakers = true;
 		} else if (categories == "Education") {
 			$scope.categories = ["Education"];
+			$scope.education = true;
 		} else if (categories == "Empowerment") {
 			$scope.categories = ["Empowerment"];
+			$scope.empowerment = true;
 		} else if (categories == "Environment") {
 			$scope.categories = ["Environment"];
+			$scope.environment = true;
 		} else if (categories == "Governance") {
 			$scope.categories = ["Governance"];
+			$scope.governance = true;
 		} else if (categories == "Health") {
 			$scope.categories = ["Health"];
+			$scope.health = true;
 		} else if (categories == "Humanity") {
 			$scope.categories = ["Humanity"];
+			$scope.humanity = true;
 		} else if (categories == "Inspiring") {
 			$scope.categories = ["Inspiring"];
+			$scope.inspiring = true;
 		} else if (categories == "Law and Justice") {
 			$scope.categories = ["Law and Justice"];
+			$scope.lawAndJustice = true;
 		} else if (categories == "Real Heroes") {
 			$scope.categories = ["Real Heroes"];
+			$scope.realHeroes = true;
 		} else if (categories == "Science and Tech") {
 			$scope.categories = ["Science and Tech"];
+			$scope.scienceAndTech = true;
 		} else if (categories == "Sports") {
 			$scope.categories = ["Sports"];
+			$scope.sports = true;
 		} else {
 			$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
 					"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
+			$scope.all = true;
 		}
 
 		var contentSearchParams = {
