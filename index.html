@@ -15,7 +15,7 @@
 <body style="font-family:roboto;height:auto; background-color: #FAFAFA" ng-app='MyApp' ng-controller='homeController' ng-cloak>
 	<div class="nav-bar">
 		<ul>
-			<li><a class="nav-toggle-btn hide-side-bar"><i class="fa fa-bars"></i></a></li>
+			<li><a class="nav-toggle-btn"><i class="fa fa-bars"></i></a></li>
 			<li class="logo offset-xs-10 offset-sl-15 offset-m-16 offset-lg-16 offset-xl-15"><a href="http://humannize.com/about">HUMANIZE</a></li>
 		</ul>
 	</div>
@@ -89,6 +89,9 @@
 		<a href="#" ng-click='loadMore()' class="btn col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-17 offset-xl-16">Load more</a>
 	</div>
 	<div class="hide-l-and-down trending-panel" ng-controller='trendsController'>
+		<h3 style='text-align: center; margin-bottom: 10px'>TRENDING</h3>
+		<hr>
+		</br>
 		<div class="trending-card card" ng-repeat='trend in trends'>
 			<a ng-href="{{ trend.url }}" target="_blank">
 				<img ng-src="http://humannize.com:8080/humanize-1/images/{{trend.imageId}}">
