@@ -91,14 +91,14 @@ div.card-main {
 .trending-panel {
 	position: fixed;
 	top: 100px;
-	left: 65%;
+	left: 64%;
 	width: 27.5%;
 }
 
 .profile-panel {
 	position: fixed;
 	top: 100px;
-	left: 7.5%;
+	left: 8.5%;
 	width: 17.5%;
 }
 
@@ -111,7 +111,7 @@ div.card-main {
 	margin-right: 0px !important;
 	padding: 5px !important;
 	box-sizing: border-box;
-	margin-bottom: 20px !important;
+	margin-bottom: 5px !important;
 }
 
 .trending-card img {
@@ -193,9 +193,9 @@ footer {
 /*Card*/
 div.card {
 	width: auto;
-	box-shadow: 1px 1px 1px #888;
-	-moz-box-shadow: 1px 1px 1px #888;
-	-webkit-box-shadow: 1px 1px 1px #888;
+	box-shadow:#888;
+	-moz-box-shadow: #888;
+	-webkit-box-shadow: #888;
 	display: block;
 	background-color: #FFFFFF;
 	padding: 0;
