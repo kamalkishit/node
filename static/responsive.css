@@ -459,7 +459,9 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-
+	.hide {
+		display: none !important;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -475,10 +477,10 @@
 
 /*Helpers*/
 @media only screen and (max-width: 992px){
-	.hide-m-and-down{
+	.hide-m-and-down {
 		display: none !important;
 	}
-	.show-m-and-down{
+	.show-m-and-down {
 		display: block !important;
 	}
 }
