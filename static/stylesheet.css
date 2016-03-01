@@ -5,6 +5,11 @@ html,body {
     margin: 0;
   	padding: 0;
   	overflow-x: hidden;
+  	background-color: #FEFEFE;
+ }
+
+ .ng-cloak { 
+ 	display:none;
  }
 
 *{
@@ -297,6 +302,10 @@ div.nav-bar {
 	position: fixed;	
 }
 
+a:hover {
+	font-weight: bold;
+}
+
 div.nav-bar ul li a {
 	text-decoration: none;
 	color: white;
@@ -310,10 +319,16 @@ div.nav-bar > ul > li{
 	display: inline !important;
 }
 
-div.nav-bar > ul > .logo {
+div.nav-bar > ul > .title {
 	color: white;
 	font-size: 20px;
-	line-height: 27px;
+	line-height: 30px;
+}
+
+div.nav-bar > ul > .options {
+	color: white;
+	font-size: 16px;
+	line-height: 30px;
 }
 
 .fa {
@@ -322,7 +337,7 @@ div.nav-bar > ul > .logo {
 }
 
 @media only screen and (max-height: 500px) {
-	nav.nav-bar > ul > .logo {
+	nav.nav-bar > ul > .title {
 		font-size: 15px;
 	}
 }
@@ -419,9 +434,8 @@ div.nav-bar > ul > .logo {
 	display: inline-block;
 	position: static;
 	left: 10px;
-	top: 10px;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 
@@ -458,4 +472,31 @@ div.nav-bar > ul > .logo {
 	height: 20%;
 	background-color: #00BFA5;
 	margin-top: 4%;
+}
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+
+    
+  animation: ripple-animation 2s;
+}
+
+
+@keyframes ripple-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
 }

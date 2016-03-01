@@ -5,6 +5,7 @@
     margin: 0;
   	padding:0;
   	overflow-x:hidden;
+  	background-color: #FAFAFA;
   }
   *{
   	margin: 0;
@@ -461,6 +462,10 @@
 @media only screen and (min-width : 768px) {
 	.hide {
 		display: none !important;
+	}
+
+	.show {
+		display: block !important;
 	}
 }
 

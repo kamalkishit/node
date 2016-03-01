@@ -12,11 +12,13 @@
 	<meta property="og:url" content="http://humannize.com" />
 	<meta property="og:image" content="http://humannize.com/static/humanize.png" />
 </head>
-<body style="font-family:roboto;height:auto; background-color: #FAFAFA" ng-app='MyApp' ng-controller='homeController' ng-cloak>
+<body style="font-family:roboto;height:auto" ng-app='MyApp' ng-controller='homeController' ng-cloak>
 	<div class="nav-bar">
 		<ul>
 			<li><a class="nav-toggle-btn hide"><i class="fa fa-bars"></i></a></li>
-			<li class="logo offset-xs-10 offset-sl-12 offset-m-17 offset-lg-18 offset-xl-16"><a href="http://humannize.com/about">HUMANIZE</a></li>
+			<li class="title offset-m-5 offset-lg-5 offset-xl-5"><a href="http://humannize.com/about">HUMANIZE</a></li>
+			<li class="options show offset-sl-12 offset-m-17 offset-lg-20 offset-xl-20"><a href="https://play.google.com/store/apps/details?id=com.humanize.app">DOWNLOAD APP</a></li>
+			<li class="hide-l-and-down options  offset-sl-1 offset-m-1 offset-lg-1 offset-xl-1"><a href="http://humannize.com/about">ABOUT</a></li>
 		</ul>
 	</div>
 
@@ -86,7 +88,7 @@
 			</div>
 		</div>
 
-		<a href="#" ng-click='loadMore()' class="btn col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-17 offset-xl-16">Load more</a>
+		<a href="#" ng-click='loadMore()' class="btn ripple col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-17 offset-xl-16">Load more</a>
 	</div>
 	<div class="hide-l-and-down trending-panel" ng-controller='trendsController'>
 		<h3 style='text-align: center; margin-bottom: 10px'>TRENDING</h3>
@@ -105,5 +107,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="angular.js" type="text/javascript"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="static/ripple.js"></script>
 </body>
 </html>
