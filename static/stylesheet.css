@@ -250,7 +250,7 @@ div.article-card figure img {
 
 div.article-card > figure > figcaption {
 	position: absolute;
-	bottom: -1%;
+	bottom: -.5%;
 	right: 4%;
     display: inline;
 	width: auto;
