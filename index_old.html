@@ -2,24 +2,23 @@
 <html>
 <head>
 	<title>HUMANIZE</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="static/responsive.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta property="og:title" content="Know what good is happening around." />
 	<meta property="og:description" content="A lot of good things are happening around us all the time. And Humanize helps you to 'know what good is happening around'. Humanize is about positivity, possibilities, ideas, solutions and solving problems.Its about the better side of human and to use that to make world around us a beautiful place." />
 	<meta property="og:url" content="http://humannize.com" />
 	<meta property="og:image" content="http://humannize.com/static/humanize.png" />
-	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
-<body id="font" ng-app='MyApp' ng-controller='homeController' ng-cloak>
+<body style="font-family:roboto;height:auto" ng-app='MyApp' ng-controller='homeController' ng-cloak>
 	<div class="nav-bar">
 		<ul>
 			<li><a class="nav-toggle-btn hide"><i class="fa fa-bars" style='color: black'></i></a></li>
-			<li class="title offset-lg-5 offset-xl-5"><a href='http://humannize.com'>HUMANIZE</a></li>
-			<li class="hide-visibility offset-lg-20 offset-xl-20"><a href='http://humannize.com/about' target="_blank">About</a></li>
-			<li class="hide-visibility"><a href="https://play.google.com/store/apps/details?id=com.humanize.app" target="_blank">Download App</a></li>
+			<li class="title offset-lg-5 offset-xl-5">HUMANIZE</li>
+			<li class="title hide-visibility offset-lg-20 offset-xl-20"><a href='http://humannize.com/about' target="_blank">About</a></li>
+			<li class="title hide-visibility offset-lg-1 offset-xl-1"><a href="https://play.google.com/store/apps/details?id=com.humanize.app" target="_blank">Download App</a></li>
 		</ul>
 	</div>
 
@@ -71,7 +70,7 @@
 		<div class="card article-card col-xs-38 col-sl-26 col-m-20 col-lg-16 col-xl-14 offset-sl-7 offset-m-10 offset-lg-12 offset-xl-11 offset-xs-1" ng-repeat='post in posts'>
 			<figure>
 				<a ng-href="{{ post.url }}" target="_blank">
-					<img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}">
+					<img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}" alt="Awesome-dad-cover">
 						
 					</img>
 				</a>
@@ -81,7 +80,7 @@
 			</figure>
 
 			<div class="title">
-				<h4 style='font-size: 15px; font-weight: bold'>{{ post.title }}</h4>
+				<h4>{{ post.title }}</h4>
 			</div>
 			<div class="relate"><span style="margin-right:5px">{{ post.createdDate }}</span><span class="source">{{ post.source }}</span></div>
 			<div class="description">
@@ -91,80 +90,21 @@
 
 		<a href="#" ng-click='loadMore()' class="btn ripple col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-17 offset-xl-16">Load more</a>
 	</div>
-	<div class="hide-l-and-down trending-panel" ng-controller='trendsController' style='text-align: center; background: white'>
-	    <div id="trending" class="carousel slide" data-ride="carousel">
-	        <!-- Carousel indicators -->
-	        <ol class="carousel-indicators">
-	            <li data-slide-to="0" class="active"></li>
-	            <li data-slide-to="1"></li>
-	            <li data-slide-to="2"></li>
-	            <li data-slide-to="3"></li>
-	            <li data-slide-to="4"></li>
-	        </ol>   
-	        <!-- Wrapper for carousel items -->
-	        <div class="carousel-inner" style="height:100% !important">
-	            <div class="item active" style="height:100% !important">
-	                <div class="trending-card card" style="height:100% !important">
-	                    <a ng-href="{{ trends[0].url }}" target="_blank">
-	                        <img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[0].imageId}}">
-	                    </a>
-	                    <div id="trending-title">{{ trends[0].title }}</div>
-	                </div>
-	            </div>
-
-	            <div class="item" style="height:100% !important">
-	                <div class="trending-card card" style="height:100% !important">
-	                    <a ng-href="{{ trends[1].url }}" target="_blank">
-	                        <img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[1].imageId}}">
-	                    </a>
-	                    <div id="trending-title">{{ trends[1].title }}</div>
-	                </div>
-	            </div>
-
-	            <div class="item" style="height:100% !important">
-	                <div class="trending-card card" style="height:100% !important">
-	                    <a ng-href="{{ trends[2].url }}" target="_blank">
-	                        <img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[2].imageId}}">
-	                    </a>
-	                    <div id="trending-title">{{ trends[2].title }}</div>
-	                </div>
-	            </div>
-
-	            <div class="item" style="height:100% !important">
-	                <div class="trending-card card" style="height:100% !important">
-	                    <a ng-href="{{ trends[3].url }}" target="_blank">
-	                        <img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[3].imageId}}">
-	                    </a>
-	                    <div id="trending-title">{{ trends[3].title }}</div>
-	                </div>
-	            </div>
-
-	            <div class="item" style="height:100% !important">
-	                <div class="trending-card card" style="height:100% !important">
-	                    <a ng-href="{{ trends[4].url }}" target="_blank">
-	                        <img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[4].imageId}}">
-	                    </a>
-	                    <div id="trending-title">{{ trends[4].title }}</div>
-	                </div>
-	            </div>
-	        </div>
-	        <!-- Carousel controls -->
-	        <a class="carousel-control left" href="#trending" data-slide="prev">
-	            <span class="glyphicon glyphicon-chevron-left"></span>
-	        </a>
-	        <a class="carousel-control right" href="#trending" data-slide="next">
-	            <span class="glyphicon glyphicon-chevron-right"></span>
-	        </a>
-	    </div>
+	<div class="hide-l-and-down trending-panel" ng-controller='trendsController' style='text-align: center'>
+		<div class="trending-card card">
+			<a ng-href="{{ trend.url }}" target="_blank">
+				<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[0].imageId}}">
+			</a>
+			<p id='trending-text'>Trending</p>
+		</div>
+		
 	</div>
-	
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="static/jquery.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="angular.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script src="static/ripple.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
