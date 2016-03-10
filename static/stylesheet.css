@@ -5,7 +5,7 @@ html,body{
     margin: 0;
   	padding: 0;
   	overflow-x: hidden;
-  	background-color: #FAFAFA;
+  	background-color: #40D295;
  }
 
  .ng-cloak { 
@@ -19,7 +19,6 @@ html,body{
 
 div.row {
 	width:100% !important;
-	margin:0px 0px 0px 8px !important;
 	min-height: 100%;
 	padding-top: 100px;
 	overflow-y: hidden;
@@ -98,7 +97,7 @@ div.card-main {
 .trending-panel {
 	position: fixed;
 	top: 100px;
-	left: 64%;
+	left: 63%;
 	width: 27.5%;
 }
 
@@ -108,7 +107,16 @@ div.card-main {
 	left: 8.5%;
 	width: 17.5%;
 }
-
+.profile-panel .card ul li a{
+		display:block;
+		text-decoration:none;
+		text-align:left;
+		padding:7px 0 7px 70px;
+		color:#000000;
+}
+a.ripple{
+	position: relative;
+}
 .profile-image {
 	width: 15%;
 }
@@ -133,9 +141,9 @@ div.card-main {
     color:black;
     width:100% !important;
     font-size:20px;
-	padding: 10px 0 3px 0;
+	margin-bottom: 10px;
 	width: auto;
-    top:10px;
+    margin-top:18px;
 }
 #trending-title{
 	box-sizing: border-box;
@@ -160,7 +168,6 @@ div.card-main {
 }
 
 .carousel{
-    background:white;
     height:250px !important;
     overflow: hidden;
     width: 100%;
@@ -448,13 +455,13 @@ div.nav-bar > ul > .options {
 	margin-bottom: 10px;
 }
 
-.side-nav ul li a {
-	display: block;
-	text-decoration: none;
-	text-align: left;
-	padding: 10px 0 10px 70px;
-	color: #000000;
-}
+.side-nav ul li a{
+		display:block;
+		text-decoration:none;
+		text-align:left;
+		padding:10px 0 10px 70px;
+		color:#000000;
+	}
 
 .card ul {
 	list-style: none;
@@ -472,7 +479,7 @@ div.nav-bar > ul > .options {
 	display: block;
 	text-decoration: none;
 	text-align: left;
-	font-size: 15px;
+	font-size: 16px;
 	padding: 7px 0 7px 70px;
 	color: #000000;
 }
