@@ -1,0 +1,228 @@
+
+div.upper{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-size: cover;
+	    overflow: hidden;
+	}
+	.img-wrap{
+		width: 100%;
+	    height: 100%;
+	    background-color: black;
+	}
+div.upper .img-wrap img{
+	width:100%;
+	height:auto;
+	min-height: 120%;
+	background-size: cover;
+	-webkit-filter:grayscale(50%);
+	position: relative;
+	opacity: 0.5;
+}
+	div.lower{
+		position: absolute;
+	    bottom:0;
+	    left: 0;
+		text-align: center;
+		height:80px;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 5px 0;
+	}
+	div.lower a{
+		display: block;
+	}
+	div.lower:hover{
+		background: rgba(0,0,0,0.2);
+	}
+	div.img{
+		background: url("http://humannize.com:8080/humanize-1/images/1458573511775210.jpg");
+		background-size: cover;
+		position: relative;
+		top: 22%;
+		left: 32.5%;
+		width:35%;
+		height:40%;
+		z-index: 999;
+	}
+	div.text-block{
+		width: 100%;
+		max-width: 600px;
+		height:200px;
+		position: relative;
+		text-align: center;
+		top:15%;
+		margin: 100px auto; 
+		z-index: 999;
+		color: #fcf9f9;
+		font-size: 40px;
+	}
+	div.transparent-nav{
+		background: -webkit-linear-gradient(top,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0) 100%);
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		height: 80px;
+		text-align: center;
+		-webkit-text-smoothing: antialiased;
+		font-size: 30px;
+		font-weight: 300;
+		color: white;
+		box-sizing: border-box;
+		padding: 20px 12px;
+	}
+	#read-more{
+		font-size: 30px;
+		margin-top: 20px;
+		display: table;
+		margin: auto;
+	}
+	#read-more a{
+		color:  #00BFA5;
+		font-size: 35px; 
+	}
+	.share-individual-wrap{
+			width: 230px;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 20px; 
+		}
+	#share-individual{
+		display: inline-block;
+		float: right;
+		position: relative;
+		bottom: -10px;
+		margin-right: 100px;
+		width: 50px;
+		height: 50px;
+	}
+	#share-individual img{
+		height: 40px;
+		width: 40px;
+	}
+	.category-individual-wrap{
+			display: table;
+			margin: auto;
+			margin-bottom: 20px;
+		}
+	#category-individual{
+		font-size: 25px;
+		color:  white;
+		border: 2px solid #00BFA5;
+		background-color:  #00BFA5;
+		padding: 3px 15px;
+		font-weight: 200;
+	}
+	#category-individual{
+		float: left;
+	}
+	#date-individual{
+		float: right;
+		border-bottom: 2px solid #00BFA5;
+		color:  white;
+		padding: 3px 15px;
+		font-size: 25px;
+		font-weight: 200;
+	}
+	@media only screen and (max-width: 768px){
+		.img-wrap img{
+			width: auto !important;
+			height: 100%;
+			min-height: 0;
+			position: relative;
+			left:-700px;
+		}
+		div.transparent-nav{
+			font-size: 30px;
+		}
+		#category-individual{
+			font-size: 25px;
+			top:100px;
+			display: block;
+			margin-top: -30px;
+		}
+		div.text-block{
+			font-size: 30px;
+			top: 80px;
+			width: 100%;
+			text-align: center;
+		}
+		#read-more{
+			font-size: 25px;
+			padding-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+		#read-more a{
+			font-size: 25px;
+		}
+		.category-individual-wrap{
+			width: 120px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.share-individual-wrap{
+			width: 230px;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 20px; 
+		}
+
+	}
+	@media only screen and (max-width: 480px){
+		.img-wrap img{
+			width: auto !important;
+			height: 100%;
+			min-height: 0;
+			position: relative;
+			left:-700px;
+		}
+		div.transparent-nav{
+			font-size: 25px;
+		}
+		#category-individual{
+			font-size: 20px;
+			top:100px;
+			display: block;
+			margin-top: -30px;
+		}
+		div.text-block{
+			font-size: 25px;
+			top: 80px;
+			width: 100%;			margin: 0 !important;
+			text-align: center;
+		}
+		#read-more{
+			font-size: 20px;
+			padding-top: 20px;
+			width:200px;
+		}
+		#read-more a{
+			font-size: 25px;
+		}
+		.share-individual-wrap{
+			width: 230px;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 20px; 
+		}
+	}
+	.transparent-nav a.nav-toggle-btn{
+		display: inline-block;
+		float: left;
+	}
+	.transparent-nav a.heading{
+		color: white;
+		text-decoration: none;
+		width: 200px;
+		margin: auto;
+		display: block;
+	}
+	.transparent-nav nav-toggle-btn{
+		float: left;
+	}
