@@ -14,7 +14,6 @@
     min-width:700px;
     width:80%;
     height: 80%;
-    padding:40px;
     position:absolute;
     top:52%;
     left:50%;
@@ -114,11 +113,14 @@ div.upper .img-wrap img{
         height:200px;
         position: relative;
         text-align: center;
-        top:15%;
         margin: 0 auto; 
+        padding: 150px 0;
         z-index: 999;
         color: #fcf9f9;
         font-size: 30px;
+    }
+    .text-block-about{
+        padding-top: 100px !important;
     }
     div.transparent-nav{
         background: -webkit-linear-gradient(top,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0) 100%);
@@ -200,7 +202,6 @@ div.upper .img-wrap img{
         div.text-block{
             font-size: 25px;
             left: 0;
-            top: 80px;
             width: 100%;
             height: 80%;
             text-align: center;

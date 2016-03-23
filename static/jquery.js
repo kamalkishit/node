@@ -29,10 +29,21 @@
         var targeted_popup_class = $(this).attr('data-popup-close');
         $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
  
-        e.preventDefault();
     });
 });
     $(document).on("pagecontainerload",function(){
        var targeted_popup_class = $(this).attr('data-popup-open');
           $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
     });
+
+
+/*Trending for small screen*/
+$(document).ready(function(){
+  $("trending-btn").on("click",function(e){
+    $("div.row-trends").css("display","block");
+    $("div.row-main").css("display","none");
+
+
+    e.preventDefault();
+  });
+});

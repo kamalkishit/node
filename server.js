@@ -83,7 +83,15 @@ app.get('/api/content', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-	res.sendfile(path.join(__dirname + '/index2.html'));
+	res.sendfile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/about', function(req, res) {
+	res.sendfile(path.join(__dirname + '/about.html'));
+});
+
+app.get('/trending', function(req, res) {
+	res.sendfile(path.join(__dirname + '/trending.html'));
 });
 
 app.listen(80);

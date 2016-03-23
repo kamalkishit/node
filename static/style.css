@@ -52,10 +52,7 @@ div.upper .img-wrap img{
 		width: 100%;
 		max-width: 600px;
 		height:200px;
-		position: relative;
-		text-align: center;
-		top:15%;
-		margin: 100px auto; 
+		text-align: center; 
 		z-index: 999;
 		color: #fcf9f9;
 		font-size: 40px;
@@ -86,7 +83,7 @@ div.upper .img-wrap img{
 		font-size: 35px; 
 	}
 	.share-individual-wrap{
-			width: 230px;
+			width: 220px;
 			margin-right: auto;
 			margin-left: auto;
 			padding-top: 20px; 
@@ -147,7 +144,6 @@ div.upper .img-wrap img{
 		}
 		div.text-block{
 			font-size: 30px;
-			top: 80px;
 			width: 100%;
 			text-align: center;
 		}
@@ -193,7 +189,6 @@ div.upper .img-wrap img{
 		}
 		div.text-block{
 			font-size: 25px;
-			top: 80px;
 			width: 100%;			margin: 0 !important;
 			text-align: center;
 		}

@@ -22,6 +22,9 @@ html,body{
   	margin: 0;
   	padding: 0;
  }
+ div.row-trends{
+ 	display: none !important;
+ }
 div.row{
 	width: 100%;
 	height: 100%;
@@ -184,11 +187,6 @@ a.ripple{
 	text-align: justify;
 }
 
-.carousel{
-    height:250px !important;
-    overflow: hidden;
-    width: 100%;
-}
 #tabs {
 	display: none;
 	margin-top: 60px;
@@ -228,6 +226,9 @@ footer {
 	}
 	.show-m-and-down-inline{
 		display: inline-block !important;
+	}
+	.row{
+		padding-top: 20px !important;
 	}
 }
 
@@ -606,4 +607,51 @@ div.nav-bar ul li.side-nav-btn a.nav-toggle-btn {
 /*Active links on nav bar*/
 .active-nav-link{
 	color: #D3D3D3;
+}
+/*Carousel*/
+
+.carousel{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-inner{
+	height: 100%;
+	width: 100%;
+}
+.carousel-inner .item{
+	height: 100%;
+	width: 100%;
+}
+.carousel-mobile{
+	width: 100%;
+	height: 100%;
+}
+.carousel-mobile .carousel-inner .item .upper .img-wrap img{
+	transform: scale(2);
+}
+/*Image loading*/
+.placeholder {
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder img {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s linear;
+}
+
+.placeholder img.loaded {
+  opacity: 1;
+}
+
+.img-small {
+  filter: blur(50px);
 }
