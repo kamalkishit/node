@@ -97,16 +97,6 @@ div.upper .img-wrap img{
     div.lower:hover{
         background: rgba(0,0,0,0.2);
     }
-    div.img{
-        background: url("http://humannize.com:8080/humanize-1/images/1458314497719810.png");
-        background-size: cover;
-        position: relative;
-        top: 22%;
-        left: 32.5%;
-        width:35%;
-        height:40%;
-        z-index: 999;
-    }
     div.text-block{
         width: 100%;
         max-width: 600px;
@@ -114,7 +104,7 @@ div.upper .img-wrap img{
         position: relative;
         text-align: center;
         margin: 0 auto; 
-        padding: 150px 0;
+        padding: 112px 0;
         z-index: 999;
         color: #fcf9f9;
         font-size: 30px;
@@ -145,7 +135,7 @@ div.upper .img-wrap img{
         font-size: 25px; 
     }
     .share-individual-wrap{
-            width: 230px;
+            width: 250px;
             margin-right: auto;
             margin-left: auto;
             padding-top: 20px; 
@@ -188,16 +178,22 @@ div.upper .img-wrap img{
             height: 100%;
             min-height: 0;
             position: relative;
-            left:-700px;
+            left:-480px;
+        }
+         .category-individual-wrap{
+            display: table;
+            margin: auto;
+            margin-bottom: 0px;
         }
         div.transparent-nav{
-            font-size: 25px;
+            font-size: 28px;
         }
         #category-individual{
             font-size: 20px;
             top:100px;
             display: block;
             margin-top: -30px;
+            padding: 0 15px; 
         }
         div.text-block{
             font-size: 25px;
@@ -205,6 +201,7 @@ div.upper .img-wrap img{
             width: 100%;
             height: 80%;
             text-align: center;
+            padding: 50px 0;
         }
         #read-more{
             font-size: 20px;
@@ -217,14 +214,43 @@ div.upper .img-wrap img{
             font-size: 25px;
         }
         .category-individual-wrap{
-            width: 130px;
+            width: auto;
             margin-left: auto;
             margin-right: auto;
         }
         .share-individual-wrap{
-            width: 230px;
             margin-right: auto;
             margin-left: auto;
-            padding-top: 20px; 
+            padding-top: 0px; 
+        }
+         #share-individual img{
+        height: 30px;
+        width: 30px;
+    }
+    div#individual-text-block{
+        width: 90%;
+        padding-left: 5%;
+    }
+    div#individual-text-block div.category-individual-wrap{
+       margin-bottom: 10px;
+    }
+     div#individual-text-block div.share-individual-wrap{
+       padding-top: 10px;
+    }
+    .text-block-about{
+        padding-top: 10px !important;
+        font-size: 20px !important;
+        width: 90%;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    }
+    @media only screen and (min-width: 481px) and (max-width: 767px){
+          .img-wrap img{
+            width: auto !important;
+            height: 100%;
+            min-height: 0;
+            position: relative;
+            left:-350px;
         }
     }

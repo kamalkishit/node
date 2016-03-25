@@ -628,7 +628,7 @@ div.nav-bar ul li.side-nav-btn a.nav-toggle-btn {
 	height: 100%;
 }
 .carousel-mobile .carousel-inner .item .upper .img-wrap img{
-	transform: scale(2);
+	transform: scale(1);
 }
 /*Image loading*/
 .placeholder {

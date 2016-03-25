@@ -13,6 +13,9 @@ div.upper{
 	    height: 100%;
 	    background-color: black;
 	}
+	.upper .about-background{
+		background-color: #00BFA5;
+	}
 div.upper .img-wrap img{
 	width:100%;
 	height:auto;
@@ -114,9 +117,6 @@ div.upper .img-wrap img{
 		padding: 3px 15px;
 		font-weight: 200;
 	}
-	#category-individual{
-		float: left;
-	}
 	#date-individual{
 		float: right;
 		border-bottom: 2px solid #00BFA5;
@@ -158,7 +158,7 @@ div.upper .img-wrap img{
 			font-size: 25px;
 		}
 		.category-individual-wrap{
-			width: 120px;
+			width: auto;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -205,6 +205,11 @@ div.upper .img-wrap img{
 			margin-right: auto;
 			margin-left: auto;
 			padding-top: 20px; 
+		}
+		div.trending-text-block{
+			margin-top: 20px;
+			width:80% !important;
+			margin-left : 10% !important;
 		}
 	}
 	.transparent-nav a.nav-toggle-btn{
