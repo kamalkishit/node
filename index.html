@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="static/responsive.css">
-	<link rel="stylesheet" type="text/css" href="static/modal-stylesheet.css">
 	
 	<meta property="og:title" content="Know what good is happening around." />
 	<meta property="og:description" content="A lot of good things are happening around us all the time. And Humanize helps you to 'know what good is happening around'. Humanize is about positivity, possibilities, ideas, solutions and solving problems.Its about the better side of human and to use that to make world around us a beautiful place." />
@@ -16,55 +15,67 @@
 	<meta property="og:image" content="http://humannize.com/static/humanize.png" />
 	
 	<style type="text/css">
-	div.category-panel{
-		width:23%;
-		min-width: 350px;
+
+	[ng\:cloak],[ng-cloak],.ng-cloak{display:none !important}
+
+	div.category-panel {
+		width: 350px;
 		position: fixed;
 		left: 57.5%;
 		top: 100px;
-		padding-left: 30px !important;
+		padding-left: 50px !important;
 	}
-	div.category-panel ul li.categories{
+
+	div.category-panel ul li.categories {
 		display:inline-block;
 		background: white;
-		border: 0.1px solid #D3D3D3;
+		border: 0.1px solid #A6A6A6;
 		border-radius: 2px;
 		width: auto;
 		margin-right: 15px;
 		margin-bottom: 10px;
 		text-align: center;
 	}
-	div.category-panel ul li.heading{
+
+	div.category-panel ul li.heading {
 		border-bottom: 0.5px solid #D3D3D3;
+		color: #A6A6A6 !important;
 	}
+
 	div.category-panel ul {
 		list-style: none;
 	}
-	div.category-panel ul li.categories a{
+
+	div.category-panel ul li.categories a {
 		padding: 4px 10px 4px 10px !important;
 		text-decoration: none;
 		display: inline-block;
+		color: #A6A6A6;
+	}
+
+	div.category-panel ul li.categories:hover {
+		border: 1px solid black;
+	}
+
+	div.category-panel ul li.categories a:hover {
 		color: black;
 	}
-	div.category-panel ul li.categories a:hover{
-		background-color: #D3D3D3;
-		opacity:0.7;
-	}
-	div.nav-bar{
-		background-color:  #008e70;
-	}
-	#load-more:hover{
+
+	#load-more:hover {
 		background-color: #D3D3D3;
 		opacity:0.8;
 		color: #333;
 	}
-	selected{
-		background-color: #00BFA5;
-		color: white;
+
+	.selected {
+		color: #00bfa5 !important;
 	}
-	a.small-font{
-		font-size: 15px !important;
-		padding: 20px !important;
+
+	a.small-font {
+		font-size: 12px !important;
+		line-height: 60px;
+		padding: 0 !important;
+		font-weight: 400;
 	}
 	div.secondary-nav{
 		display: none;
@@ -84,7 +95,7 @@
 	}
 	div.secondary-nav ul li a{
 		text-decoration: none;
-		color:black;
+		color: #D3D3D3;
 		width: 100%;
 		height: 100%;
 		text-align: left;
@@ -103,252 +114,234 @@
 	.top-story{
 		margin-left: 15px
 	}
-	div.about{
-		background: url("http://www.publicdomainpictures.net/pictures/30000/velka/stunning-sunset-background.jpg");
-		background-size: cover;
-		width: 100%;
-		height: 100%;
-		font-size: 25px;
+
+	.download-app{
+		width: auto !important;
+			}
+	.download-app ul li{
+		position: relative !important;
+			}
+a.app-download-btn{
+		border: 1px solid #D3D3D3;
+		border-radius: 1000px;
+		display: block !important;
+		width: 40px;
+		height: 40px;
 		text-align: center;
-		color: white;
+		margin-top: 10px;
+		margin-right: 5px;
+
+	}
+	a.app-download-btn img{
+		height: 16px !important;
+		width: 16px !important;
+		margin-top: 4px;
+	}
+	a.app-download-btn:hover,div.article #share-btn:hover{
+		border: 1px solid #00bfa5;
+	}
+	.download-app-list{
+		width: 150px;
 		height: 100%;
-		padding: 16% 0;
-		width: 100%;
 	}
-	.popup-about{
-		padding: 0 !important;
+	#share-btn{
+		width:40px;
+		height: 40px;
+		border: 1px solid #D3D3D3;
+		border-radius: 1000px;
+		text-align: center;
+		float: right;
+		position: relative;
+		right: 2%;
+		margin-bottom: -20px;
 	}
-	.popup-trending{
-		padding: 0 !important;
+	#share-btn img{
+		width: 20px;
+		height: 20px;
+		margin-top: 8px;
 	}
 	</style>
 
 </head>
 <body ng-app='MyApp' ng-controller='homeController' ng-cloak>
-	<div class="nav-bar" >
-		<div class="row-nav-bar">
+	<div style="background-color:white !important">
+		<div class="nav-bar" >
+			<div class="row-nav-bar">
+				<ul>
+					<li>
+						<a class="nav-toggle-btn show-m-and-down-inline" style="padding:16px;display:none"><i class="fa fa-bars" style='color: #00bfa5'></i></a>
+					</li>
+					<li class="title offset-lg-1 offset-xl-3 offset-m-2 offset-sl-3 offset-xs-4">
+						<a href='#' ng-click='getContentByCategory("all")' class="ripple valign ripple selected">HUMANIZE</a>
+					</li>
+					
+					<li class="title offset-lg-8 offset-xl-9 offset-m-11 offset-sl-12 offset-xs-13 hide-m-and-down">
+						<a href='#' ng-click='getContentByCategory("all")' class="small-font valign ripple selected">HOME</a>
+					</li>
+					
+					<li class="title offset-lg-11 offset-xl-11 offset-m-14 offset-sl-16 offset-xs-13 hide-m-and-down">
+						<a href='#' class="small-font valign ripple" data-popup-open="trending-popup">TRENDING</a>
+					</li>
+
+					<li class="title offset-lg-14 offset-xl-13 offset-m-17 offset-sl-16 offset-xs-13 hide-m-and-down">
+						<a href='http://humannize.com' class="small-font valign top-story  ripple" data-popup-open="popup-1">TOP STORY</a>
+					</li>
+
+					<li class="offset-lg-30 offset-xl-32 offset-m-30 offset-sl-32 offset-xs-29 download-app">
+						<ul class="download-app-list">
+							<li><a href="#" class="app-download-btn" title="Like us on Facebook"><img src="static/facebook.png"></a></li>
+							<li><a href="#" class="app-download-btn" title="Download App on Playstore"><img src="static/android.png"></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--<div class="secondary-nav show-m-and-down">
 			<ul>
-				<li><a class="nav-toggle-btn show-m-and-down-inline" style="padding:16px;display:none"><i class="fa fa-bars" style='color: white'></i></a></li>
-				<li class="title offset-lg-1 offset-xl-4 offset-m-2 offset-sl-3 offset-xs-4"><a href='#' ng-click='getContentByCategory("all")' class="ripple valign ripple">HUMANIZE</a></li>
-				<li class="title offset-lg-7 offset-xl-9 offset-m-11 offset-sl-12 offset-xs-13 hide-m-and-down"><a href='#' ng-click='getContentByCategory("all")' class="small-font valign ripple">Home</a></li>
-				<li class="title offset-lg-10 offset-xl-11 offset-m-14 offset-sl-16 offset-xs-13 hide-m-and-down"><a href='#' class="small-font valign ripple" data-popup-open="trending-popup">Trending</a></li>
-				<li class="title offset-lg-13 offset-xl-13 offset-m-17 offset-sl-16 offset-xs-13 hide-m-and-down"><a href='http://humannize.com' class="small-font valign top-story  ripple" data-popup-open="popup-1">Top story</a></li>
-				<li class="offset-lg-30 offset-xl-29 offset-m-30 offset-sl-26 hide-sl-only"><a class="ripple valign"  data-popup-open="popup-2">About</a></li>
-				<li class="offset-lg-33 offset-xl-32 offset-m-33 offset-sl-26 hide-m-and-down"><a href="https://play.google.com/store/apps/details?id=com.humanize.app" target="_blank" class="ripple valign">Download App</a></li>
-				<li id="get-app" class="offset-lg-31 offset-xl-31 offset-m-34 offset-sl-31 offset-xs-29 show-m-and-down"><a href="https://play.google.com/store/apps/details?id=com.humanize.app" target="_blank" class="ripple valign">Get App</a></li>
-
+				<li class="title offset-m-10 offset-sl-8">
+					<a href='#' ng-click='getContentByCategory("all")' class=" selected">Home</a>
+				</li>
+			
+				<li class="title">
+					<a href='http://humannize.com/trending'>Trending</a>
+				</li>
 			</ul>
-		</div>
-	</div>
-	<div class="secondary-nav show-m-and-down">
-		<ul>
-		<li class="title offset-m-10 offset-sl-8"><a href='#' ng-click='getContentByCategory("all")'>Home</a></li>
-		<li class="title"><a href='http://humannize.com/trending'>Trending</a></li>
-		</ul>
-	</div>
-	<nav class="side-nav">
-		<ul>
-			<li class="heading">Categories</li>
-			<li id="all-categories" ng-class="{ 'selected': all }"><a href='#' ng-click='getContentByCategory("all")' class="ripple">All</a></li>
-			<li id="achievers" ng-class="{ 'selected': achievers }"><a href='#' ng-click='getContentByCategory("Achievers")' class="ripple">Achievers</a></li>
-			<li id="beautiful" ng-class="{ 'selected': beautiful }"><a href='#' ng-click='getContentByCategory("Beautiful")' class="ripple">Beautiful</a></li>
-			<li id="changemakers" ng-class="{ 'selected': changemakers }"><a href='#' ng-click='getContentByCategory("Changemakers")' class="ripple">Changemakers</a></li>
-			<li id="education" ng-class="{ 'selected': education }"><a href='#' ng-click='getContentByCategory("Education")' class="ripple">Education</a></li>
-			<li id="empowerment" ng-class="{ 'selected': empowerment }"><a href='#' ng-click='getContentByCategory("Empowerment")' class="ripple">Empowerment</a></li>
-			<li id="environment" ng-class="{ 'selected': environment }"><a href='#' ng-click='getContentByCategory("Environment")' class="ripple">Environment</a></li>
-			<li id="governance" ng-class="{ 'selected': governance }"><a href='#' ng-click='getContentByCategory("Governance")' class="ripple">Governance</a></li>
-			<li id="health" ng-class="{ 'selected': health }"><a href='#' ng-click='getContentByCategory("Health")' class="ripple">Health</a></li>
-			<li id="humanity" ng-class="{ 'selected': humanity }"><a href='#' ng-click='getContentByCategory("Humanity")' class="ripple">Humanity</a></li>
-			<li id="inspiring" ng-class="{ 'selected': inspiring }"><a href='#' ng-click='getContentByCategory("Inspiring")' class="ripple">Inspiring</a></li>
-			<li id="law-and-justice" ng-class="{ 'selected': lawAndJustice }"><a href='#' ng-click='getContentByCategory("Law and Justice")' class="ripple">Law and Justice</a></li>
-			<li id="real-heroes" ng-class="{ 'selected': realHeroes }"><a href='#' ng-click='getContentByCategory("Real Heroes")' class="ripple">Real Heroes</a></li>
-			<li id="science-and-tech" ng-class="{ 'selected': scienceAndTech }"><a href='#' ng-click='getContentByCategory("Science and Tech")' class="ripple">Science and Tech</a></li>
-			<li id="sports" ng-class="{ 'selected': sports }"><a href='#' ng-click='getContentByCategory("Sports")' class="ripple">Sports</a></li>
-			<li id="about"><a href="http://www.humannize.com/about">About</a></li>
-		</ul>
-	</nav>
+		</div> -->
 
-	<div class="category-panel hide-m-and-down">
-		<ul>
-			<li class="heading">Categories</li>
-			<li id="achievers" class="categories"><a href='#' ng-click='getContentByCategory("Achievers")'>ACHIEVERS</a></li>
-			<li id="beautiful" class="categories"><a href='#' ng-click='getContentByCategory("Beautiful")'>BEAUTIFUL</a></li>
-			<li id="changemakers" class="categories"><a href='#' ng-click='getContentByCategory("Changemakers")'>CHANGEMAKERS</a></li>
-			<li id="education" class="categories"><a href='#' ng-click='getContentByCategory("Education")'>EDUCATION</a></li>
-			<li id="empowerment" class="categories"><a href='#' ng-click='getContentByCategory("Empowerment")'>EMPOWERMENT</a></li>
-			<li id="environment" class="categories"><a href='#' ng-click='getContentByCategory("Environment")'>ENVIRONMENT</a></li>
-			<li id="governance" class="categories"><a href='#' ng-click='getContentByCategory("Governance")'>GOVERNANCE</a></li>
-			<li id="health" class="categories"><a href='#' ng-click='getContentByCategory("Health")'>HEALTH</a></li>
-			<li id="humanities" class="categories"><a href='#' ng-click='getContentByCategory("Humanity")'>HUMANITY</a></li>
-			<li id="inspiring" class="categories"><a href='#' ng-click='getContentByCategory("Inspiring")'>INSPIRING</a></li>
-			<li id="law-and-justice" class="categories"><a href='#' ng-click='getContentByCategory("Law and Justice")'>LAW AND JUSTICE</a></li>
-			<li id="real-heroes" class="categories"><a href='#' ng-click='getContentByCategory("Real Heroes")'>REAL HEROES</a></li>
-			<li id="science-and-tech" class="categories"><a href='#' ng-click='getContentByCategory("Science and Tech")'>SCIENCE AND TECH</a></li>
-			<li id="sports" class="categories"><a href='#' ng-click='getContentByCategory("Sports")'>SPORTS</a></li>
+		<nav class="side-nav">
+			<ul>
+			<li id="cross"><i class="fa fa-times fa-3x" style="color: white !important"></i></li>
+				<li class="heading">Categories</li>
+
+				<li id="all-categories" ng-class="{ 'selected': all }">
+					<a href='#' ng-click='getContentByCategory("all")' class="ripple">All</a>
+				</li>
+
+				<li id="achievers" ng-class="{ 'selected': achievers }">
+					<a href='#' ng-click='getContentByCategory("Achievers")' class="ripple">Achievers</a>
+				</li>
+
+				<li id="beautiful" ng-class="{ 'selected': beautiful }">
+					<a href='#' ng-click='getContentByCategory("Beautiful")' class="ripple">Beautiful</a>
+				</li>
+
+				<li id="changemakers" ng-class="{ 'selected': changemakers }">
+					<a href='#' ng-click='getContentByCategory("Changemakers")' class="ripple">Changemakers</a>
+				</li>
+
+				<li id="education" ng-class="{ 'selected': education }">
+					<a href='#' ng-click='getContentByCategory("Education")' class="ripple">Education</a>
+				</li>
+
+				<li id="empowerment" ng-class="{ 'selected': empowerment }">
+					<a href='#' ng-click='getContentByCategory("Empowerment")' class="ripple">Empowerment</a>
+				</li>
+
+				<li id="environment" ng-class="{ 'selected': encouraging }">
+					<a href='#' ng-click='getContentByCategory("Encouraging")' class="ripple">Encouraging</a>
+				</li>
+
+				<li id="environment" ng-class="{ 'selected': environment }">
+					<a href='#' ng-click='getContentByCategory("Environment")' class="ripple">Environment</a>
+				</li>
+
+				<li id="governance" ng-class="{ 'selected': governance }">
+					<a href='#' ng-click='getContentByCategory("Governance")' class="ripple">Governance</a>
+				</li>
+
+				<li id="health" ng-class="{ 'selected': health }">
+					<a href='#' ng-click='getContentByCategory("Health")' class="ripple">Health</a>
+				</li>
+
+				<li id="humanity" ng-class="{ 'selected': humanity }">
+					<a href='#' ng-click='getContentByCategory("Humanity")' class="ripple">Humanity</a>
+				</li>
+
+				<li id="inspiring" ng-class="{ 'selected': inspiring }">
+					<a href='#' ng-click='getContentByCategory("Inspiring")' class="ripple">Inspiring</a>
+				</li>
+
+				<li id="law-and-justice" ng-class="{ 'selected': lawAndJustice }">
+					<a href='#' ng-click='getContentByCategory("Law and Justice")' class="ripple">Law and Justice</a>
+				</li>
+
+				<li id="real-heroes" ng-class="{ 'selected': realHeroes }">
+					<a href='#' ng-click='getContentByCategory("Real Heroes")' class="ripple">Real Heroes</a>
+				</li>
+
+				<li id="science-and-tech" ng-class="{ 'selected': scienceAndTech }">
+					<a href='#' ng-click='getContentByCategory("Science and Tech")' class="ripple">Science and Tech</a>
+				</li>
+
+				<li id="sports" ng-class="{ 'selected': sports }">
+					<a href='#' ng-click='getContentByCategory("Sports")' class="ripple">Sports</a>
+				</li>
+
+				<li id="about">
+					<a href="http://www.humannize.com/about">About</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="category-panel hide-m-and-down">
+			<ul>
+				<li class="heading">Categories</li>
+				<li id="achievers" class="categories"><a href='#' ng-click='getContentByCategory("Achievers")'>ACHIEVERS</a></li>
+				<li id="beautiful" class="categories"><a href='#' ng-click='getContentByCategory("Beautiful")'>BEAUTIFUL</a></li>
+				<li id="changemakers" class="categories"><a href='#' ng-click='getContentByCategory("Changemakers")'>CHANGEMAKERS</a></li>
+				<li id="education" class="categories"><a href='#' ng-click='getContentByCategory("Education")'>EDUCATION</a></li>
+				<li id="empowerment" class="categories"><a href='#' ng-click='getContentByCategory("Empowerment")'>EMPOWERMENT</a></li>
+				<li id="encouraging" class="categories"><a href='#' ng-click='getContentByCategory("Encouraging")'>ENCOURAGING</a></li>
+				<li id="environment" class="categories"><a href='#' ng-click='getContentByCategory("Environment")'>ENVIRONMENT</a></li>
+				<li id="governance" class="categories"><a href='#' ng-click='getContentByCategory("Governance")'>GOVERNANCE</a></li>
+				<li id="health" class="categories"><a href='#' ng-click='getContentByCategory("Health")'>HEALTH</a></li>
+				<li id="humanities" class="categories"><a href='#' ng-click='getContentByCategory("Humanity")'>HUMANITY</a></li>
+				<li id="inspiring" class="categories"><a href='#' ng-click='getContentByCategory("Inspiring")'>INSPIRING</a></li>
+				<li id="law-and-justice" class="categories"><a href='#' ng-click='getContentByCategory("Law and Justice")'>LAW AND JUSTICE</a></li>
+				<li id="real-heroes" class="categories"><a href='#' ng-click='getContentByCategory("Real Heroes")'>REAL HEROES</a></li>
+				<li id="science-and-tech" class="categories"><a href='#' ng-click='getContentByCategory("Science and Tech")'>SCIENCE AND TECH</a></li>
+				<li id="sports" class="categories"><a href='#' ng-click='getContentByCategory("Sports")'>SPORTS</a>
+			</li>
 		</div>
 
-	<div class="row content">
-		<div class="card article-card col-xs-38 col-sl-26 col-m-20 col-lg-16 col-xl-14 offset-sl-7 offset-m-10 offset-lg-6 offset-xl-8 offset-xs-1" ng-repeat='post in posts'>
-			<figure>
-				<a ng-href="{{ post.originalUrl }}" target="_blank">
-					<img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}" />
-				</a>
-				<figcaption>
-					<a href="#" ng-click='getContentByCategory(post.category)'>{{ post.category }}</a>
-				</figcaption>
-			</figure>
-			<div class="title">
-				<h4>{{ post.title }}</h4>
+		<div class="row content">
+			<div class="article col-xs-40 col-sl-26 col-m-20 col-lg-16 col-xl-14 offset-sl-7 offset-m-10 offset-lg-6 offset-xl-8" ng-repeat='post in posts'>
+					<a ng-href="{{ post.originalUrl }}" target="_blank">
+						<img ng-src="http://humannize.com:8080/humanize-1/images/{{post.imageId}}" />
+					</a>
+					<div class="category">
+						<a href="#" ng-click='getContentByCategory(post.category)'>{{ post.category }}</a>
+					</div>
+				<div class="title">
+					<p><a ng-href="{{ post.originalUrl }}" target="_blank" style="text-decoration:none">{{ post.title }}</a></p>
+				</div>
+
+				<div class="relate">
+					<span style="margin-right:5px;float: right;color: #A6A6A6 !important">{{ post.createdDate }}</span>
+					<span class="source"><a ng-href="{{ post.originalUrl }}" target="_blank" style="color: #A6A6A6; text-decoration: none">{{ post.source }}</a></span>
+				</div>
+
+				<div class="description">
+					{{ post.description }}
+					<br>
+				</div>
+				
+				<div id="share-btn">
+					<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+				</div>
 			</div>
-			<div class="relate"><span style="margin-right:5px">{{ post.createdDate }}</span><span class="source">{{ post.source }}</span></div>
-			<div class="description">
-				{{ post.description }}
-				<br>
-			</div>
-			<span id="share-btn"><a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png">Share</a></span>
+			
+			<a href="#" id="load-more" ng-click='loadMore()' class="btn col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-11 offset-xl-13">Load more</a>
 		</div>
-		<a href="#" id="load-more" ng-click='loadMore()' class="btn col-xs-14 col-sl-12 col-m-6 col-lg-6 col-xl-4 offset-xs-13 offset-sl-14 offset-m-17 offset-lg-11 offset-xl-13">Load more</a>
-	</div>
-	<!--Modal-->
-<div class="popup popup-about" data-popup="popup-1" ng-controller='trendsController'>
-    <div class="popup-inner">
-	<div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[0].category }}</span><br></div>
-	{{ trends[0].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[0].originalUrl }}" target='_blank'>{{ trends[0].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[0].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[0].imageId}}"/>
-    	</div>
-	</div>
-        <p><a data-popup-close="popup-1" href="#">Close</a></p>
-        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
-    </div>
-</div>
-<div class="popup" data-popup="popup-2">
-    <div class="popup-inner popup-about">
-		<div class="about">
-		<div class="about-text">
-			A lot of good things are happening around us all the time.<br>
-		And Humanize helps you to "know what good is happening around".<br><br>
-		Humanize is about positivity, possibilities, ideas and solutions.<br>
-		Its about the better side of human and to use that to make world around us a better place.
-		</div>
-</div>
-        <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
-    </div>
-</div>
-<div class="popup" data-popup="trending-popup" ng-controller='trendsController'>
-    <div class="popup-inner popup-trending">
-<div id="trending" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#trending" data-slide-to="0" class="active"></li>
-      <li data-target="#trending" data-slide-to="1"></li>
-      <li data-target="#trending" data-slide-to="2"></li>
-      <li data-target="#trending" data-slide-to="3"></li>
-      <li data-target="#trending" data-slide-to="4"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[0].category }}</span><br></div>
-	{{ trends[0].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[0].originalUrl }}" target='_blank'>{{ trends[0].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[0].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src=""http://humannize.com:8080/humanize-1/images/{{trends[0].imageId}}""/>
-    	</div>
-	</div>
-      </div>
-
-      <div class="item">
-       <div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[1].category }}</span><br></div>
-	{{ trends[1].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[1].originalUrl }}" target='_blank'>{{ trends[1].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[1].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[1].imageId}}"/>
-    	</div>
-	</div>
-      </div>
-    
-      <div class="item">
-        <div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[2].category }}</span><br></div>
-	{{ trends[2].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[2].originalUrl }}" target='_blank'>{{ trends[2].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[2].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[2].imageId}}"/>
-    	</div>
-	</div>
-      </div>
-
-      <div class="item">
-       <div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[3].category }}</span><br></div>
-	{{ trends[3].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[3].originalUrl }}" target='_blank'>{{ trends[3].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[3].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[3].imageId}}"/>
-    	</div>
-	</div>
-      </div>
-
-            <div class="item">
-       <div class="text-block">
-	<div class="category-individual-wrap"><span id="category-individual">{{ trends[4].category }}</span><br></div>
-	{{ trends[4].title }} <br>
-		<span id="read-more">Read more at <a ng-href="{{ trends[3].originalUrl }}" target='_blank'>{{ trends[4].source }}</a></span>
-		<div class="share-individual-wrap"><a id="share-individual" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ trends[4].shortUrl }}" target="_blank" title="Share"><img src="static\share.png" title="Share"></a></div>
-	</div>
-	<div class="upper">
-		 <div class="img-wrap">
-    		<img ng-src="http://humannize.com:8080/humanize-1/images/{{trends[4].imageId}}"/>
-    	</div>
-	</div>
-      </div>
-    </div>
+	</div>	
 
 
-
-
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#trending" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#trending" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-        <a class="popup-close" data-popup-close="trending-popup" href="#">x</a>
-    </div>
-</div>
  	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="static/jquery.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="angular.js" type="text/javascript"></script>
-	<script src="static/ripple.js"></script>
 	<script src="static/js/bootstrap.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>

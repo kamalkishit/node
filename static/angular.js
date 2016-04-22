@@ -88,6 +88,7 @@ app.controller('homeController', function($scope, $http, $location) {
 		$scope.changemakers = false;
 		$scope.education = false;
 		$scope.empowerment = false;
+		$scope.encouraging = false;
 		$scope.environment = false;
 		$scope.governance = false;
 		$scope.health = false;
@@ -118,6 +119,9 @@ app.controller('homeController', function($scope, $http, $location) {
 		} else if (categories == "Empowerment") {
 			$scope.categories = ["Empowerment"];
 			$scope.empowerment = true;
+		} else if (categories == "Encouraging") {
+			$scope.categories = ["Encouraging"];
+			$scope.encouraging = true;
 		} else if (categories == "Environment") {
 			$scope.categories = ["Environment"];
 			$scope.environment = true;
@@ -146,7 +150,7 @@ app.controller('homeController', function($scope, $http, $location) {
 			$scope.categories = ["Sports"];
 			$scope.sports = true;
 		} else {
-			$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Environment", 
+			$scope.categories = ["Achievers", "Beautiful", "Changemakers", "Education", "Empowerment", "Encouraging", "Environment", 
 					"Governance", "Health", "Humanity", "Inspiring", "Law and Justice", "Real Heroes", "Science and Tech", "Sports"];
 			$scope.all = true;
 		}

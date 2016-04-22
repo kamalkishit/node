@@ -1,11 +1,51 @@
 html,body{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-family: 16px "Fakt",AvenirNext-Medium,"Segoe UI",sans-serif !important;
     height: auto;
     width: 100%;
     margin: 0;
   	padding: 0;
-  	background-color: #40D295;
+  	background-color: white;
  }
+ .download-app{
+		width: auto !important;
+			}
+	.download-app ul li{
+		position: relative !important;
+			}
+
+ a.app-download-btn{
+		border: 1px solid #D3D3D3;
+		border-radius: 1000px;
+		display: block !important;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		margin-top: 10px;
+		margin-right: 5px;
+
+	}
+	a.app-download-btn img{
+		height: 16px !important;
+		width: 16px !important;
+		margin-top: 4px;
+	}
+	a.app-download-btn:hover,div.article #share-btn:hover{
+		border: 1px solid #00bfa5;
+	}
+	.download-app-list{
+		width: 150px;
+		height: 100%;
+	}
+ a, a:hover{
+ 	text-decoration: none;
+ 	color: black;
+ }
+ a.small-font{
+		font-size: 12px !important;
+		line-height: 60px;
+		padding: 0 !important;
+		font-weight: 400;
+	}
 .cloak {
 	position: absolute;
 	top: 0;
@@ -30,7 +70,7 @@ div.row{
 	height: 100%;
 	box-sizing: border-box;
 	display: block;
-	padding-top: 100px;
+	padding-top: 110px;
 	padding-bottom: 50px;
 }
 div.row-nav-bar{
@@ -89,18 +129,19 @@ div.card-main {
 }
 
 .relate {
-	padding: 2% 4% 2% 4%;
+	padding: 10px 2% 10px 2%;
 	margin-bottom: 5px;
 }
 
 .relate > .date {
 	border-bottom: 2px solid #00BFA5;
+	float: right;
 }
 
 .relate > .source {
-	float: right;
+	float: left;
 }
-.side-nav ul li:hover{
+.side-nav ul li a:hover{
 	background-color: #D3D3D3;
 		opacity:0.7;
 }
@@ -227,9 +268,6 @@ footer {
 	.show-m-and-down-inline{
 		display: inline-block !important;
 	}
-	.row{
-		padding-top: 20px !important;
-	}
 }
 
 @media only screen and (max-width:480px) {
@@ -294,22 +332,26 @@ div.card {
 }
 
 /*Article card*/
-		
-div.article-card figure {
+div.article{
+	border-bottom: 1px solid rgba(139,139,139,0.3);
+	margin-bottom: 30px;
+	box-sizing: border-box;
+	padding-bottom: 50px;
+}
+div.article figure {
   	position: relative;
   	padding: 2%;
 }
 
-div.article-card figure img {
+div.article a img {
   display: block;
   /* removes trailing whitespace */
   width: 100%;
-  height: auto;
   display: inline;
   cursor: pointer;
 }
 
-div.article-card > figure > figcaption {
+div.article > figure > figcaption {
 	position: absolute;
 	bottom: -5px;
 	right: 4%;
@@ -320,7 +362,7 @@ div.article-card > figure > figcaption {
 	box-sizing: border-box;
 }
 
-div.article-card > figure > figcaption > a {
+div.article > figure > figcaption > a {
 	border: none;
 	border-radius: 1px;
 	color: white;
@@ -334,85 +376,93 @@ div.article-card > figure > figcaption > a {
 	font-size: 15px;
 }
 
-.card > .title {
-	font-size: 19px;
+.article > .title {
+	font-size: 20px;
+	width: 100%;
+	font-family: FaktCondensed, sans-serif;
 	word-wrap: break-word;
-	padding: 2% 4% 2% 4%;
+	margin-top: 10px;
+	padding: 0 2% 0 2%;
 	text-align: justify;
-	font-weight: bold;
+	box-sizing: border-box;
+	font-weight: 500 !important;
+	line-height: 26px;
 }
 
-.card > .description {
-	font-family: Georgia,Times,"Times New Roman",serif !important;
-	font-size: 15px;
-	line-height: 1.4;
+.article > .description {
+	font-family: Georgia,serif !important;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
 	text-align: justify;	
-	padding: 2% 4% 2% 4%;
+	padding: 12px 2% 10px 2%;
 }
-div.card #share-btn{
-	border: 1px solid #00BFA5;
-	border-radius: 3px;
-	position: absolute;
-	bottom: 10px;
-	right: 4%;
-    display: inline-block;
-	width: 90px;
-	margin: 0;
-	color: white;
-	box-sizing: border-box;
+
+div.article div.category{
+	height: 30px;
+	border: 1px solid #A6A6A6;
+	border-radius: 2px;
+	padding: 3px 10px;
+	margin-top: 12px;
+	position: relative;
+	left: 2%;
 }
-div.card #share-btn a{
-	display: block;
-	padding: 5px 10px;
-	width: 100%;
-	height: 100%;
-	color: #00bfa5;
+div.article div.category:hover{
+	border: 1px solid black;
+}
+div.article div.category a:hover{
+	color: black;
+}
+div.article div.category a{
 	text-decoration: none;
-}
-div.card #share-btn a img{
-	height: 20px;
-	width: 20px;
-	margin-right: 5px;
+	height: 100%;
+	width: 100%;
+	display: block;
+	color: #A6A6A6;
 }
 /*Nav*/
+#get-app{
+		display: none;
+	}
+	.top-story{
+		margin-left: 15px
+	}
 div.nav-bar {
 	width: 100%;
-	box-shadow: 0px 3px 3px #D3D3D3;
-	-moz-box-shadow: 0px 3px 3px #D3D3D3;
-	-webkit-box-shadow: 0px 3px 3px #D3D3D3;
 	box-sizing: border-box;
 	height: 60px;
 	background-color: #FFFFFF;
 	box-sizing: border-box;
 	display: block !important;
 	z-index: 2;
-	position: fixed;	
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #D3D3D3;	
 }
-div.nav-bar ul li a, div.nav-bar ul span a{
+div.nav-bar ul li a,div.semi-transparent-nav ul li a{
 	text-decoration: none;
+	font-family: Fakt, AvenirNext-Medium, 'Segoe UI', sans-serif;
 	font-size: bold;
-	color: white;
+	color: #A6A6A6;
 	display:inline-block;
 	font-size: 20px;
 	cursor: pointer;
 }
-div.nav-bar ul span{
-	width:80px;
-}
-div.nav-bar ul li a.valign,div.nav-bar ul span a.valign{
+div.nav-bar ul li a.valign,.semi-transparent-nav ul li a.valign{
 	padding: 16px 12px;
 }
-div.nav-bar ul li a:hover,div.nav-bar ul span a:hover,.category-panel ul li a:hover,div.card span#share-btn a:hover{
+div.nav-bar ul li a:hover,div.nav-bar ul span a:hover,div.card span#share-btn a:hover{
 	cursor: pointer;
-	font-weight: bold;
+	color: black;
 }
 
-div.nav-bar > ul {
+div.nav-bar > ul,.semi-transparent-nav > ul {
 	list-style: none;
 	height:60px;
 }
 
-div.nav-bar ul li{ 
+div.nav-bar ul li,.semi-transparent-nav ul li{ 
 	display: inline-block;
 	box-sizing: border-box;
 	height:100%;
@@ -422,9 +472,9 @@ div.nav-bar ul li{
 }
 
 div.nav-bar > ul > .title {
-	color: black;
+	color: #00BFA5;
 	font-size: 22px;
-	line-height: 30px;
+	line-height: 60px !important;
 	margin-left:10px;
 	font-style: bold;
 	width: 80px;
@@ -437,7 +487,7 @@ div.nav-bar > ul > .options {
 }
 
 .fa {
-	color: white;
+	color: black !important;
 	margin-left: 2%;
 }
 
@@ -446,7 +496,32 @@ div.nav-bar > ul > .options {
 		font-size: 15px;
 	}
 }
-
+div.secondary-nav{
+		display: none;
+		height: 100px;
+		width: 100%;
+		left: 0;
+		z-index: 999;
+		padding-top: 50px;
+		background-color: white;
+	}
+	div.secondary-nav ul{
+		list-style: none;
+	} 
+	div.secondary-nav ul li{
+		display: inline-block;
+		float: left;
+	}
+	div.secondary-nav ul li a{
+		text-decoration: none;
+		color: #D3D3D3;
+		width: 100%;
+		height: 100%;
+		text-align: left;
+		display: inline-block;
+		padding: 20px 0px 14px 20px;
+		float: left;
+	}
 /*Button*/
 .btn {
 	border: none;
@@ -459,7 +534,9 @@ div.nav-bar > ul > .options {
 	text-decoration: none !important;
 	color: black;
 	background-color: white;
-	box-shadow: 1px 1px 5px #888;
+	box-shadow: 0px 0px 1px #888888;
+	-moz-box-shadow: 0px 0px 1px #888888;
+	-webkit-box-shadow: 0px 0px 1px #888888;
 	box-sizing: border-box;
 }
 
@@ -486,11 +563,6 @@ div.nav-bar > ul > .options {
 	-webkit-box-shadow: 0px 3px 4px #888;
 	-moz-box-shadow: 0px 3px 4px #888;
 }
-
-.selected {
-	background-color: #D3D3D3;
-}
-
 .active-nav .side-nav {
 	transform: translate3d(0,0,0);
 }
@@ -540,28 +612,34 @@ div.nav-bar > ul > .options {
 	padding: 7px 0 7px 70px;
 	color: #000000;
 }
-
-div.nav-bar ul li.side-nav-btn a.nav-toggle-btn {
+div.nav-bar ul li#side-nav-btn{
+	position: absolute;
+	right: 20px;
+}
+div.nav-bar ul li#side-nav-btn a.nav-toggle-btn {
 	display: inline-block;
-	position: relative;
-	left: 10px;
-	top:0;
 	bottom:0;
 	width: 30px;
 	height: 60px;
 	cursor: pointer;
+	color: black !important;
 }
 
 @media only screen and (max-width:480px) {
 	.side-nav {
-		width:75%;
-		transform: translate3d(-100%,0,0);
+		width:100%;
 		transition: transform 0.3s ease;
 		overflow-y: scroll;
+		background: rgba(0,0,0,0.9);
 	}
-
-	.active-nav .side-nav {
-		transform: translate3d(0,0,0);
+	.side-nav #cross{
+		display: inline-block !important;
+		width: 40px;
+		padding-left: 10px;
+		cursor: pointer;
+	}
+	.side-nav ul li a,.side-nav ul li.heading{
+		color: white;
 	}
 	figcaption{
 		bottom: -7px !important;
@@ -606,7 +684,7 @@ div.nav-bar ul li.side-nav-btn a.nav-toggle-btn {
 }
 /*Active links on nav bar*/
 .active-nav-link{
-	color: #D3D3D3;
+	color: #D3D3D3 !important;
 }
 /*Carousel*/
 
@@ -654,4 +732,13 @@ div.nav-bar ul li.side-nav-btn a.nav-toggle-btn {
 
 .img-small {
   filter: blur(50px);
+}
+/*Categories selected*/
+.categories-selected{
+	background-color: #00BFA5;
+	color: white !important;
+}
+.categories-not-selected{
+	background-color: white;
+	color: black;
 }

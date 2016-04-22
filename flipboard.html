@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flipboard template</title>
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="static/responsive.css">
+	<link rel="stylesheet" type="text/css" href="static/modal-stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="static/thumbnail-slider.css">
+	<style type="text/css">
+	div.card{
+		height: 50% !important;
+	}
+	div.left{
+		display: inline-block !important;
+		width: 38% !important;
+		height: 100% !important;
+		box-sizing: border-box;
+	}
+	div.left{
+		margin-left: 10%;
+		float: left;
+	}
+	.sl-img-card{
+		width:100%;
+		height: 60%;
+	}
+	.small-card{
+		width: 17% !important;
+		float: right;
+		box-sizing: border-box;
+	}
+	.small-card:nth-child(3){
+		margin-right: 10%;
+		margin-left: 4%;
+	}
+	.small-card > a > img{
+		height: 20% !important;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	div.small-card .title{
+		font-family: FaktCondensed, sans-serif;
+		font-size: 20px;
+		line-height: 26px;
+		color: #333333;
+		margin-top: 10px;
+		margin-left: 4%;
+		display: block;
+	}
+	div.left .img-card{
+		width: 100%;
+		height: 60% !important;
+	}
+	div.left .title{
+		font-family: FaktCondensed, sans-serif;;
+		font-size: 28px;
+		line-height: 32px;
+		color: #333333;
+		padding-top: 20px;
+		width: 100%;
+		display: inline-block;
+		margin-left: 4%;
+		display: block;
+	}
+	div.from{
+		font-family: Fakt, AvenirNext-Medium, 'Segoe UI', sans-serif;
+		font-size: 16px;
+		color: #999999;
+		width: 100%;
+		display: inline-block;
+		margin-left: 4%;
+	}
+	div.lg-img-card,div.sl-img-card{
+		display: block !important;
+		margin-bottom: 100px;
+	}
+	.lg-img-card #gridline1{
+		position: absolute;
+		left: 50%;
+
+	}
+	.sl-card #gridline1{
+		position: absolute;
+		left: 50%;
+		top: 84%;
+	}
+	#gridline2{
+		position: absolute;
+		left: 71%;
+	}
+	.small-card .description{
+		font-family: Georgia, serif;
+		display: inline-block;
+		margin-left: 4%;
+	}
+	.data-box{
+		float: right;
+		display: inline-block;
+	}
+	.sl-card{
+		margin-top: 35%;
+		width: 100%;
+		height: 80%;
+	}
+	.md-img-card{
+		width: 38%;
+		display: inline-block;
+		position: relative;
+		top: 0px;
+	}
+	.md-img-card:nth-child(1){
+		margin-left: 10%;	
+		margin-right: 4%;	
+	}
+	.md-img-card img{
+		width: 100%;
+		max-height: 250px;
+		height: 40%;
+		margin-bottom: 10px;
+	}
+	.md-img-card .title{
+		    font-family: FaktCondensed, sans-serif;
+		    font-size: 20px;
+		    line-height: 26px;
+		    color: #333333;
+		    margin-top: 10px;
+		  	margin-left: 4%;
+		  	display: block;
+	}
+	.md-img-card .description{
+		font-family: Georgia, serif;
+		margin-left: 4%;
+	}
+	.md-img-card .category,.lg-img-card .category{
+		border: 1px solid #d3d3d3;
+		text-align: center;
+		position: relative;
+		left: 4%;
+		padding: 2px 10px;
+		color: #d3d3d3;
+		margin-top: 5px;
+		display: inline-block;
+		width: auto;
+	}
+	.md-img-card .category:hover,.lg-img-card .category:hover{
+		border: 1px solid #00bfa5;
+	}
+	#gridline-horizontal{
+		position: absolute;
+		top: 77%;
+		left: 10%;
+	}
+	.small-card .source, .md-img-card .source{
+		font-weight: 500;
+		margin: 5px 4%;
+		display: block;
+
+	}
+	#share-btn{
+		width:40px;
+		height: 40px;
+		border: 1px solid #D3D3D3;
+		border-radius: 1000px;
+		text-align: center;
+		float: right;
+		margin-bottom: -20px;
+	}
+	#share-btn img{
+		width: 20px;
+		height: 20px;
+		margin-top: 8px;
+	}
+	</style>
+</head>
+<body ng-app='MyApp' ng-controller='trendsController'>
+<div class="nav-bar" >
+			<div class="row-nav-bar">
+				<ul>
+					<li>
+						<a class="nav-toggle-btn show-m-and-down-inline" style="padding:16px;display:none"><i class="fa fa-bars" style='color: white'></i></a>
+					</li>
+					<li class="title offset-lg-1 offset-xl-3 offset-m-2 offset-sl-3 offset-xs-4">
+						<a href='#' ng-click='getContentByCategory("all")' class="ripple valign ripple selected">HUMANIZE</a>
+					</li>
+					
+					<li class="title offset-lg-8 offset-xl-9 offset-m-11 offset-sl-12 offset-xs-13 hide-m-and-down">
+						<a href='#' ng-click='getContentByCategory("all")' class="small-font valign ripple selected">HOME</a>
+					</li>
+					
+					<li class="title offset-lg-11 offset-xl-11 offset-m-14 offset-sl-16 offset-xs-13 hide-m-and-down">
+						<a href='#' class="small-font valign ripple" data-popup-open="trending-popup">TRENDING</a>
+					</li>
+
+					<li class="title offset-lg-14 offset-xl-13 offset-m-17 offset-sl-16 offset-xs-13 hide-m-and-down">
+						<a href='http://humannize.com' class="small-font valign top-story  ripple" data-popup-open="popup-1">TOP STORY</a>
+					</li>
+
+					<li class="offset-lg-30 offset-xl-32 offset-m-30 offset-sl-32 offset-xs-29 download-app">
+						<ul class="download-app-list">
+							<li><a href="#" class="app-download-btn" title="Like us on Facebook"><img src="static/facebook.png"></a></li>
+							<li><a href="#" class="app-download-btn" title="Download App on Playstore"><img src="static/android.png"></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+<div class="row">
+	<div class="col-xl-40 lg-img-card">
+		<div class="left">
+			<a href="#" ><img ng-src="{{ trends[0].imageURL }}" class="img-card"></a>
+			<a href="#" class="title">{{ trends[3].title }}</a>
+			<a class="from">Fox Business</a>
+			<div id="share-btn">
+				<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+			</div>
+		</div>
+		<svg height="400" width="1" id="gridline1">
+  <line x1="0" y1="0" x2="0" y2="400" style="stroke:rgba(133,133,133,0.4);stroke-width:1px" />
+</svg>
+	<div class="small-card">
+		<a href="#" ><img ng-src="{{ trends[1].imageURL }}"></a>
+		<a href="#" class="category" href="#">something</a>
+		<a href="#" class="title">{{ trends[1].title }}</a>
+		<a href="#" class="source">Flipboard</a>
+		<div class="description">{{ trends[1].description }}</div>
+		<div id="share-btn">
+		<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+	</div>
+	</div>
+	<svg height="400" width="1" id="gridline2">
+  <line x1="0" y1="0" x2="0" y2="400" style="stroke:rgba(133,133,133,0.4);stroke-width:1px" />
+</svg>
+	<div class="small-card">
+		<a href="#" ><img ng-src="{{ trends[2].imageURL }}"></a>
+		<a href="#" class="category" href="#">something</a>
+		<a href="#" class="title">{{ trends[2].title }}</a>
+		<a href="#" class="source">Flipboard</a>
+		<div class="description">{{ trends[2].description }}</div>
+		<div id="share-btn">
+		<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+	</div>
+	</div>
+</div>
+<svg height="1" width="80%" id="gridline-horizontal">
+  <line x1="0" y1="0" x2="100%" y2="0" style="stroke:rgba(133,133,133,0.4);stroke-width:1px" />
+</svg>
+<div class="sl-card">
+<div class="md-img-card">
+	<a href="#" ><img ng-src="{{ trends[3].imageURL }}"></a>
+	<a href="#" class="category" href="#">something</a>
+	<a href="#" class="title">{{ trends[1].title }}</a>
+	<a href="#" class="source">Flipboard</a>
+	<div class="description">{{ trends[3].description }}</div>
+	<div id="share-btn">
+		<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+	</div>
+</div>
+<svg height="400" width="1" id="gridline1">
+  <line x1="0" y1="0" x2="0" y2="400" style="stroke:rgba(133,133,133,0.4);stroke-width:1px" />
+</svg>
+<div class="md-img-card">
+	<a href="#" ><img ng-src="{{ trends[4].imageURL }}"></a>
+	<a href="#" class="category" href="#">something</a>
+	<a href="#" class="title">{{ trends[4].title }}</a>
+	<a href="#" class="source">Flipboard</a>
+	<div class="description">{{ trends[4].description }}</div>
+	<div id="share-btn">
+		<a ng-href="https://www.facebook.com/sharer/sharer.php?u={{ post.shortUrl }}" target="_blank"><img src="static\share.png"></a>
+	</div>
+</div>
+</div>
+	<script src="static/thumbnail-slider.js" type="text/javascript"></script>
+ 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="static/jquery.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="angular.js" type="text/javascript"></script>
+	<script src="static/ripple.js"></script>
+	<script src="static/js/bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 			$('body').addClass('active-nav');
 
 		});
-		$('.row,.card,nav.side-nav ul li a,div.upper,div.text-block').on('click',function(){
+		$('.row,.card,nav.side-nav ul li a,div.upper,div.text-block,.side-nav li#cross').on('click',function(){
 			$('body').removeClass('active-nav');
 
 		});

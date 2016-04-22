@@ -1,11 +1,4 @@
-   html,body{
-    font-family: 'Roboto', GillSans, Calibri, Trebuchet, sans-serif;
-    height:100%;
-    width:100%;
-    margin: 0;
-  	padding:0;
-  	background-color: #FAFAFA;
-  }
+
   *{
   	margin: 0;
   	padding:0;
