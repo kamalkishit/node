@@ -7,7 +7,7 @@
 	<div class="text-block" id="individual-text-block">
 	<div class="category-individual-wrap"><span id="category-individual">{{ posts[0].category }}</span><br></div>
 	{{ posts[0].title }}<br>
-		<span id="read-more">Read more at <a href="#">{{ posts[0].source }}</a></span>
+		<span id="read-more">Read more at <a ng-href="{{ posts[0].originalUrl }}">{{ posts[0].source }}</a></span>
 		<div class="share-individual-wrap"><a id="share-individual" href="#" title="Share"><img src="../static/share.png" title="Share"></a></div>
 	</div>
 	<div class="upper">
